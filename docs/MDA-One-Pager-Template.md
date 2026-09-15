@@ -10,7 +10,7 @@ This game is designed for people who like to spend time strategising and go into
 ## Aesthetics (what the player feels)
 - The player feels a sense of tension and relief in each of the encounters, mistakes made early on can harm a teams progression
 - The player is rewarded for completing battles efficiently 
-- 
+
 
 ## Core mechanics (3 to 5 verbs or systems)
 1. Enemy Action Priority
@@ -24,14 +24,14 @@ This game is designed for people who like to spend time strategising and go into
 
 
 ## Progression & content
-- **Session length:** <e.g. 3 to 8 minutes per run>
+- **Session length:** 6 to 10 minutes per run
 - **Content in the vertical slice (by Week 6):** 1 tileset, 3 unit archetypes, 3 missions, basic AI
-- **Content by CA3:** <what is added, if anything>
+- **Content by CA3:** Refined current systems
 
 ## Platform features (Android)
-- **Touch model:** <e.g. one-thumb virtual stick + tap>
-- **Safe areas and orientation:** <portrait / landscape; notch handling>
-- **Haptics:** <where and why, or none>
+- **Touch model:** Tap for abilities, movement can be done by tapping or dragging
+- **Safe areas and orientation:** <portrait / landscape; notch handling> 
+- **Haptics:** Haptics on Hit
 - **Lifecycle:** pause/resume and focus loss handled from Week 2
 - **Store / testing tracks:** awareness only, no uploads
 
@@ -49,7 +49,7 @@ This game is designed for people who like to spend time strategising and go into
 
 1. Walking from one encounter to the next
 2. Custom Party Selection
-3. 
+3. Dragging and Tapping for movement, if cut one or the other
 
 ## Scope lock
 - **Locked on:** Wed 16 Sep 2026
