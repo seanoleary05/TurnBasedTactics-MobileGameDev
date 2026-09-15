@@ -1,0 +1,6 @@
+15th Sep 2026
+Galaxy A15
+MyGame-0.1.0.apk
+
+Performing Streamed Install
+Success
