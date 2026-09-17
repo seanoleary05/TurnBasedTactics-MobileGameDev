@@ -3,6 +3,8 @@ using UnityEngine;
 public class GridInital : MonoBehaviour
 {
     public GameObject tilePrefab;
+
+    
     void Awake(){
     for (int row = 0; row < 4; row++)
     {
