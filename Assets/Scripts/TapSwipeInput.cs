@@ -22,8 +22,8 @@ public class TapSwipeInput : MonoBehaviour
             if (d.magnitude >= px) Debug.Log("Swipe " + d.normalized);
             else if (t.time - t.startTime < tapMax) {
                 Debug.Log("Tap: Selected @ " + t.screenPosition);
-                Instantiate(sampleShape).transform.position = Camera.main.ScreenToWorldPoint(new Vector3(t.screenPosition.x, t.screenPosition.y, 10f));
-                
+                //Instantiate(sampleShape).transform.position = Camera.main.ScreenToWorldPoint(new Vector3(t.screenPosition.x, t.screenPosition.y, 10f));
+                Haptics.Pulse();
             }
         }
     }
