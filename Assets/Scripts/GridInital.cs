@@ -13,7 +13,7 @@ public class GridInital : MonoBehaviour
         {
             GameObject tile = Instantiate(tilePrefab, new Vector3(gridParent.position.x + row, gridParent.position.y + col, 0), Quaternion.identity);
             SpriteRenderer sr = tile.GetComponent<SpriteRenderer>();
-            sr.sortingLayerName = "UI Layer3";
+            sr.sortingLayerName = "UI Layer1";
             sr.sortingOrder = 1;
         }
     }
