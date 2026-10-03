@@ -1,2 +1,8 @@
 Performing Streamed Install
 Success
+
+    versionCode=2 minSdk=26 targetSdk=36
+    versionName=0.2.0
+    signatures=PackageSignatures{e0f0ce2 version:2, signatures:[88e289f9], past signatures:[]}
+
+Screenshot Taken on Samsung A15 Android 14
