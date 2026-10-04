@@ -1,4 +1,4 @@
-** AI was used as a productivity tool to create the Long Description and Privacy Statement
+** AI was used as a productivity tool to create the Long Description and Privacy Statement \
 Game Title: Turn Based Tactics \
 Option Number: 3 \
 Phone Model: Galaxy A15 \
