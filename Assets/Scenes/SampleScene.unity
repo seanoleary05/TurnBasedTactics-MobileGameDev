@@ -1858,7 +1858,6 @@ GameObject:
   - component: {fileID: 1721129749}
   - component: {fileID: 1721129750}
   - component: {fileID: 1721129751}
-  - component: {fileID: 1721129752}
   - component: {fileID: 1721129753}
   - component: {fileID: 1721129754}
   m_Layer: 0
@@ -1909,21 +1908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TapSwipeInput
   swipeDp: 50
   tapMax: 0.3
-  sampleShape: {fileID: 0}
---- !u!114 &1721129752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721129748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16bd9e051ff065129f96be8fa8d64cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Grid
-  tilePrefab: {fileID: 1544249808208236227, guid: c9c75df07790c5badaf72a04e6ccb2d1, type: 3}
-  gridParent: {fileID: 1827102026}
+  sampleShape: {fileID: 359270330}
 --- !u!114 &1721129753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2140,8 +2125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16bd9e051ff065129f96be8fa8d64cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridInital
-  tilePrefab: {fileID: 1544249808208236227, guid: c9c75df07790c5badaf72a04e6ccb2d1, type: 3}
+  tilePrefab: {fileID: 1440211767406196134, guid: 101150feea967ba79a002219743f0ffd, type: 3}
   gridParent: {fileID: 1827102026}
+  _cam: {fileID: 519420032}
 --- !u!1 &1874957491
 GameObject:
   m_ObjectHideFlags: 0
