@@ -26,6 +26,7 @@ struct IEqualityComparer_1_tF175EE4608832085A0EE2A97DAE545B83F097888;
 struct KeyValuePair_2_tC24A74EF64A292F5C6BA77D0B04CD6620D2DE3AC;
 struct List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73;
 struct List_1_t6D4D3AAF46D9E2944E578579CE720FABFD990C26;
+struct List_1_t41896DF347A129D13205BBFADE03DFB21E05E459;
 struct List_1_t660C0DEB5CCE3DB654363B2C90CC563508E5B65B;
 struct List_1_t4A80BCCFB0BC8742C8BB601365DB07226750573A;
 struct List_1_t70EE7982F45810D4B024CF720D910E67974A3094;
@@ -2307,6 +2308,10 @@ struct FalloffType_tE9BECCB411DA63109760103AF7476F422A01376D
 {
 	uint8_t ___value__;
 };
+struct FeatureType_t794EFAD24C687FA0CDC5A313581A39F5CB61CC41 
+{
+	int32_t ___value__;
+};
 struct GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC 
 {
 	intptr_t ___handle;
@@ -4220,6 +4225,27 @@ struct UnsafeMeshGenerationNode_t1FF7D38D9B39DC59A2F8E2DFC92BFAB2481E88A2
 {
 	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ___m_Handle;
 };
+struct XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2 
+{
+	String_t* ___name;
+	List_1_t41896DF347A129D13205BBFADE03DFB21E05E459* ___usageHints;
+	int32_t ___featureType;
+	uint32_t ___customSize;
+};
+struct XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2_marshaled_pinvoke
+{
+	char* ___name;
+	List_1_t41896DF347A129D13205BBFADE03DFB21E05E459* ___usageHints;
+	int32_t ___featureType;
+	uint32_t ___customSize;
+};
+struct XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2_marshaled_com
+{
+	Il2CppChar* ___name;
+	List_1_t41896DF347A129D13205BBFADE03DFB21E05E459* ___usageHints;
+	int32_t ___featureType;
+	uint32_t ___customSize;
+};
 struct RTInstance_t82A289FDC8E8112219057734D0AE172A4E822AED 
 {
 	float4x3_t91174DFA825CF654DEC0189269DD172BF4E08CE2 ___localToWorld;
@@ -5401,6 +5427,82 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CachedCodeEntryKey_Equals_m59F40708B9717
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool KeyEvent_Equals_m76D27461C6112D06D6210AE73F9D2A43ED3B10D4 (KeyEvent_tCBB9830C9FA6B909A5A6BD122FF4B532126E7674* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Rune_Equals_mE3D6609368AB40A856C04A58E887B4123B0066E7 (Rune_tE8DB196113D1DBF48E710C120CC50D2AD7D5915E* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool quaternion_Equals_m76A30472ADEE2172211A45884866303FEA683E23_inline (quaternion_t9C8C2916B7359C174B215BBB41F290ABCBEA8AEA* __this, quaternion_t9C8C2916B7359C174B215BBB41F290ABCBEA8AEA ___0_x, const RuntimeMethod* method) ;
+// Method Definition Index: 2577
+// Method Definition Index: 2577
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Array_InternalArray__ICollection_Contains_TisXRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2_mA31B0B389E3EF3C37961F25ABA6C7FAD0E95590D (RuntimeArray* __this, XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2 ___0_item, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	//<source_info:<no-source>:1>
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		int32_t L_0;
+		L_0 = il2cpp_codegen_array_get_rank(__this);
+		if ((((int32_t)L_0) <= ((int32_t)1)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA* L_1 = (RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA_il2cpp_TypeInfo_var)));
+		RankException__ctor_m92CFA18243797ADB9BA12DFF436EC3139DCFC48B(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral89EE3F7AE8AF1895B90AAC597B98A25EFB53DCF1)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, method);
+	}
+
+IL_0014:
+	{
+		int32_t L_2;
+		L_2 = il2cpp_codegen_array_get_length(__this);
+		V_0 = L_2;
+		V_1 = 0;
+		goto IL_0055;
+	}
+
+IL_001f:
+	{
+		int32_t L_3 = V_1;
+		GetGenericValueImpl(__this, L_3, (&V_2));
+		goto IL_003a;
+	}
+
+IL_003a:
+	{
+		XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2 L_5 = V_2;
+		XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2 L_6 = L_5;
+		RuntimeObject* L_7 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_6);
+		Il2CppFakeBox<XRFeatureDescriptor_t690E672A6BBBEFBB8AF221485C1884507EAFB5B2> L_8(il2cpp_rgctx_data(method->rgctx_data, 0), ___0_item);
+		bool L_9;
+		L_9 = ValueType_Equals_mCA5344597A8055EC544855AD60A983B10E0EE67D((ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F*)(&L_8), L_7, NULL);
+		if (!L_9)
+		{
+			goto IL_0051;
+		}
+	}
+	{
+		return (bool)1;
+	}
+
+IL_0051:
+	{
+		int32_t L_10 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_10, 1));
+	}
+
+IL_0055:
+	{
+		int32_t L_11 = V_1;
+		int32_t L_12 = V_0;
+		if ((((int32_t)L_11) < ((int32_t)L_12)))
+		{
+			goto IL_001f;
+		}
+	}
+	{
+		return (bool)0;
+	}
+}
 // Method Definition Index: 2577
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Array_InternalArray__ICollection_Contains_TisXRView_t70E23918C68E24DB22A8614AA8717B3BA213FAB5_m8717EA3B0793F330F88B207AB6347F9671A358E7 (RuntimeArray* __this, XRView_t70E23918C68E24DB22A8614AA8717B3BA213FAB5 ___0_item, const RuntimeMethod* method) 
 {
@@ -22453,15 +22555,7 @@ IL_0055:
 // Method Definition Index: 2578
 // Method Definition Index: 2578
 // Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 2578
-// Method Definition Index: 57464
+// Method Definition Index: 57481
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool quaternion_Equals_m49A157BEC8D48F3D82E72F1D0099916366018428_inline (quaternion_t9C8C2916B7359C174B215BBB41F290ABCBEA8AEA* __this, RuntimeObject* ___0_x, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -22488,7 +22582,7 @@ IL_0017:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 57463
+// Method Definition Index: 57480
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool quaternion_Equals_m76A30472ADEE2172211A45884866303FEA683E23_inline (quaternion_t9C8C2916B7359C174B215BBB41F290ABCBEA8AEA* __this, quaternion_t9C8C2916B7359C174B215BBB41F290ABCBEA8AEA ___0_x, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>

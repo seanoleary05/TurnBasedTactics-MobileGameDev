@@ -2124,7 +2124,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c16bd9e051ff065129f96be8fa8d64cd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridInital
+  m_EditorClassIdentifier: Assembly-CSharp::GridManager
   tilePrefab: {fileID: 1440211767406196134, guid: 101150feea967ba79a002219743f0ffd, type: 3}
   gridParent: {fileID: 1827102026}
   _cam: {fileID: 519420032}

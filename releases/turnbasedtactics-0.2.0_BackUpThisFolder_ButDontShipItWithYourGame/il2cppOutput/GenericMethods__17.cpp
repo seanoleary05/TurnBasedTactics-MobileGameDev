@@ -6,7 +6,6 @@
 
 
 struct Dictionary_2_t311FE6772BE844D8DD6741B5F17F22B17B395341;
-struct Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506;
 struct Dictionary_2_t6682243BDABA638FCBE4F1D9875B5B1455A7686E;
 struct Func_1_t97C6124008260D65F78265F8B3965ACA776F0671;
 struct Func_3_t3E644C82345CE04737DA5CDE018481FE0A88F821;
@@ -21,12 +20,6 @@ struct List_1_t4A80BCCFB0BC8742C8BB601365DB07226750573A;
 struct List_1_t70EE7982F45810D4B024CF720D910E67974A3094;
 struct List_1_tB0B308D151FBF226396B20253C1FF11CF7D10D3A;
 struct Queue_1_t488F4FFC87B785BACAAF18A6B2E9307E5451DF68;
-struct RefCounted_t6B975CD3D06E8D955346FC0D66E8F6E449D49A44;
-struct RefCounted_t0E133AD36715877AE1CE72539A0199B4D3AA8CD1;
-struct RefCounted_t81BCBAE57D930C934CF7A439452D65303AC6A8CD;
-struct RefCounted_t78303B1CD3D08C664ABB15EBD7C882DA3E06CF7D;
-struct RefCounted_tA9FB4D63A1064BD322AFDFCD70319CB384C057D9;
-struct RefCounted_t812D790A2C787F18230F9234F6C9B84D4AC1A85A;
 struct UnsafeList_1_t5C65DCA6782B7C9860C859C2F0C07A2C497E822D;
 struct KeyValuePair_2U5BU5D_tF8154B2302178CCE00D745DBF55F703880469DFC;
 struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
@@ -67,8 +60,6 @@ struct Entry_t475ED76E31923970E7F7A6522E570E7577C487B9;
 struct EventBase_tD7F89B936EB8074AE31E7B15976C072277371F7C;
 struct EventConsumer_t6D08A21A3FF574758C289118775786B6D35754F3;
 struct FieldInfo_t;
-struct FlattenedSelector_tB2AFFD9D91833D68734821D583367B18D35A0AC9;
-struct FlattenedSelectorPart_tD9EBC73D6704A9B622C3FF7F0DEB81EF0E115986;
 struct Font_tC95270EA3198038970422D78B74A7F2E218A96B6;
 struct FontAsset_t61A6446D934E582651044E33D250EA8D306AB958;
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
@@ -94,11 +85,11 @@ struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A;
 struct OnScreenControl_t449BC1FA3DCA3F7787643FAB4F4B1906A7B32418;
 struct Page_tB4EA8095DF85BAF22AB8FCA71400121E721B57C9;
 struct PerformDynamicRes_t0949EAA6943CF225A1F61B233E13A440C1C09B47;
+struct RTHandle_t135537761C47BC929F032B3C8F4D55EA1111B07B;
 struct RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA;
 struct ReflectionProbe_t7CFA63F0340447A0069E66DB261A8A1B79BA8A2D;
 struct RenderData_t1ABE116B2B5E0409AC699E195922516606531DC2;
 struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
-struct SelectorRangeDescriptor_t7D9E7AED1604D7EC60BADD32A999A578BFC9AD72;
 struct SendOrPostCallback_t5C292A12062F24027A98492F52ECFE9802AA6F0E;
 struct Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99;
 struct String_t;
@@ -111,6 +102,7 @@ struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1;
 struct Type_t;
 struct UIAnimationBinder_t144240AB0391801DF6223A9A19BDAA7E44B1AA62;
 struct UIAnimationClip_tFB53C6186F959E95BDF9FC388D9F67925289363A;
+struct UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7;
 struct UxmlSerializedData_t5BDDB665835158F6BC2975E086891B337C3BB706;
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F;
 struct VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115;
@@ -142,8 +134,6 @@ struct DeviceRequirement_t80E71C44DF1923C15D3AA025242B7348EBF8B056_marshaled_com
 struct DeviceRequirement_t80E71C44DF1923C15D3AA025242B7348EBF8B056_marshaled_pinvoke;
 struct Exception_t_marshaled_com;
 struct Exception_t_marshaled_pinvoke;
-struct FlattenedSelectorPart_tD9EBC73D6704A9B622C3FF7F0DEB81EF0E115986;
-struct FlattenedSelector_tB2AFFD9D91833D68734821D583367B18D35A0AC9;
 struct InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735_marshaled_com;
 struct InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735_marshaled_pinvoke;
 struct PropertyPathPart_tFB308743948D2298957DC1898D90AF2ACFED9DFF_marshaled_com;
@@ -152,7 +142,6 @@ struct ReadActionJson_t912C3AB53939E37EA2AAE5AC5E50CABB2CE52A75_marshaled_com;
 struct ReadActionJson_t912C3AB53939E37EA2AAE5AC5E50CABB2CE52A75_marshaled_pinvoke;
 struct RemoteInputDevice_tF7E8C5EB795DA20F3EABAA259FE5A118C976C5AE_marshaled_com;
 struct RemoteInputDevice_tF7E8C5EB795DA20F3EABAA259FE5A118C976C5AE_marshaled_pinvoke;
-struct SelectorRangeDescriptor_t7D9E7AED1604D7EC60BADD32A999A578BFC9AD72;
 struct StateChangeMonitorListener_tB4DF9E5041A278FB15B9D5F5E9E08361A08A56BE_marshaled_com;
 struct StateChangeMonitorListener_tB4DF9E5041A278FB15B9D5F5E9E08361A08A56BE_marshaled_pinvoke;
 struct StyleValueHandle_t5831643AAA7AD8C5C43A4498C5E0A2545F78227D;
@@ -352,76 +341,6 @@ struct EmptyData_t399475F01E0BC0B85E2FE88B9144B6DBDB94CFA5
 		uint8_t EmptyData_tC7B11A9E1949C5344FF2D2112FB7B4C384E675AE__padding[1];
 	};
 };
-struct Entry_t740F919D5BA6D1FE201C58777E6EB966B35EE2EE 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	bool ___value;
-};
-struct Entry_tA212E7034D981AC2F7E219C600769EE485919684 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	int32_t ___value;
-};
-struct Entry_t0AAB24E71075CFC8D9EE6B23B95E3BB82B223FAD 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	uint16_t ___value;
-};
-struct Entry_tEF6BEA499CCB8C4F2AA974BD354B4E3BCFE5EC4B 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	uint64_t ___value;
-};
-struct Entry_t4D3FDFE59398F64D5B4FFA1D66084EBA0830B286 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_t25AC885273EAD139C461A67DBF3DA0F0CF022339 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int64_t ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_t2679F25F22E3E7DB5F988C82C064BA4BE59F5677 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	int32_t ___value;
-};
-struct Entry_t8DBA43D6278FB62ADE0F36B5405862F425F5D218 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	uint32_t ___value;
-};
-struct Entry_tEB46DBF39E6F936D9793B0EE07CA4AFCE97193AB 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_tE39EFE8390317589FD9BFA3B38B542860BFE0172 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint64_t ___key;
-	Il2CppSharedGenericObject* ___value;
-};
 struct Handle_1_t78EA27F15D89081CB224A7229220EED408650D50 
 {
 	uint64_t ___Value;
@@ -470,30 +389,6 @@ struct ReadOnlyArray_1_t4A15F7D15ACB297B45A08889D51E4CACEAD4EDF9
 	NamedValueU5BU5D_tADD8F1373B88C55F68499688D72C21A97F63303A* ___m_Array;
 	int32_t ___m_StartIndex;
 	int32_t ___m_Length;
-};
-struct StyleDataRef_1_tBB9987581539847AE5CCA2EA2349E05CDC9127FA 
-{
-	RefCounted_t6B975CD3D06E8D955346FC0D66E8F6E449D49A44* ___m_Ref;
-};
-struct StyleDataRef_1_t5330A6F4EAC0EAB88E3B9849D866AA23BB6BE5F4 
-{
-	RefCounted_t0E133AD36715877AE1CE72539A0199B4D3AA8CD1* ___m_Ref;
-};
-struct StyleDataRef_1_tF773E9CBC6DC0FEB38DF95A6F3F47AC49AE045B3 
-{
-	RefCounted_t81BCBAE57D930C934CF7A439452D65303AC6A8CD* ___m_Ref;
-};
-struct StyleDataRef_1_t1D59CCAB740BE6B330D5B5FDA9F67391800200B3 
-{
-	RefCounted_t78303B1CD3D08C664ABB15EBD7C882DA3E06CF7D* ___m_Ref;
-};
-struct StyleDataRef_1_t6A7B146DD79EDF7F42CD8CCF3E411B40AA729B8E 
-{
-	RefCounted_tA9FB4D63A1064BD322AFDFCD70319CB384C057D9* ___m_Ref;
-};
-struct StyleDataRef_1_t9CB834B90E638D92A3BE5123B0D3989697AA87FC 
-{
-	RefCounted_t812D790A2C787F18230F9234F6C9B84D4AC1A85A* ___m_Ref;
 };
 struct ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D 
 {
@@ -607,11 +502,6 @@ struct DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D
 {
 	uint64_t ____dateData;
 };
-struct DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 
-{
-	int32_t ___start;
-	int32_t ___count;
-};
 struct EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 
 {
 	union
@@ -676,37 +566,6 @@ struct FourCC_tA6CAA4015BC25A7F1053B6C512202D57A9C994ED
 struct GPUComponentHandle_t619739F7572042FBAC8209B8B39DE768B62D7669 
 {
 	int16_t ___U3CindexU3Ek__BackingField;
-};
-struct GlyphAnchorPoint_t1E0A7753CCCC41F22D3C408C4F96DDEC70291929 
-{
-	float ___m_XCoordinate;
-	float ___m_YCoordinate;
-};
-struct GlyphAnchorPoint_t581FDCAD5A1D0F3B129968FAEF20C113AAB0BC08 
-{
-	float ___m_XCoordinate;
-	float ___m_YCoordinate;
-};
-struct GlyphValueRecord_t780927A39D46924E0D546A2AE5DDF1BB2B5A9C8E 
-{
-	float ___m_XPlacement;
-	float ___m_YPlacement;
-	float ___m_XAdvance;
-	float ___m_YAdvance;
-};
-struct Guid_t 
-{
-	int32_t ____a;
-	int16_t ____b;
-	int16_t ____c;
-	uint8_t ____d;
-	uint8_t ____e;
-	uint8_t ____f;
-	uint8_t ____g;
-	uint8_t ____h;
-	uint8_t ____i;
-	uint8_t ____j;
-	uint8_t ____k;
 };
 struct Hash128_t93367F504B687578F893CDBCD13FB95AC8A87A40 
 {
@@ -800,10 +659,6 @@ struct IntPtr_t
 {
 	void* ___m_value;
 };
-struct InternalManagedFileHandle_t1578FEE483FEB6924F10CD3016EFAA2A1B9FD391 
-{
-	int32_t ___handle;
-};
 struct InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735 
 {
 	String_t* ___m_StringOriginalCase;
@@ -823,31 +678,6 @@ struct JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08
 {
 	uint64_t ___jobGroup;
 	int32_t ___version;
-};
-struct LifecycleScopeKey_t786C4635697BF09DC1C3BA0331E34017B8BA961D 
-{
-	Type_t* ____scopeType;
-	RuntimeObject* ____context;
-};
-struct LifecycleScopeKey_t786C4635697BF09DC1C3BA0331E34017B8BA961D_marshaled_pinvoke
-{
-	Type_t* ____scopeType;
-	Il2CppIUnknown* ____context;
-};
-struct LifecycleScopeKey_t786C4635697BF09DC1C3BA0331E34017B8BA961D_marshaled_com
-{
-	Type_t* ____scopeType;
-	Il2CppIUnknown* ____context;
-};
-struct MarkPositionAdjustment_tEE7CE316B8F61A7D6725524435B6363E849C62ED 
-{
-	float ___m_XPositionAdjustment;
-	float ___m_YPositionAdjustment;
-};
-struct MarkPositionAdjustment_t2523798D56F14A93A080D9D1298498325A51F436 
-{
-	float ___m_XPositionAdjustment;
-	float ___m_YPositionAdjustment;
 };
 struct Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 
 {
@@ -873,10 +703,6 @@ struct PhysicsHandle_tEC3DCC38ABB8395068171070539ABF8309A854C2
 	int32_t ___m_Index1;
 	uint16_t ___m_World0;
 	uint16_t ___m_Generation;
-};
-struct PropertyName_tE4B4AAA58AF3BF2C0CD95509EB7B786F096901C2 
-{
-	int32_t ___id;
 };
 struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 
 {
@@ -905,28 +731,9 @@ struct RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8
 	int32_t ___m_Width;
 	int32_t ___m_Height;
 };
-struct RenderInstancedDataLayout_t06AF33510AC89DBD09A3A161FF809EDFAB30EC7A 
-{
-	int32_t ___U3CsizeU3Ek__BackingField;
-	int32_t ___U3CoffsetObjectToWorldU3Ek__BackingField;
-	int32_t ___U3CoffsetPrevObjectToWorldU3Ek__BackingField;
-	int32_t ___U3CoffsetRenderingLayerMaskU3Ek__BackingField;
-};
-struct RenderSpriteInstancedDataLayout_t4129388FA190352FA5AC84729B01A7AB44DFEAB9 
-{
-	int32_t ___U3CsizeU3Ek__BackingField;
-	int32_t ___U3CoffsetObjectToWorldU3Ek__BackingField;
-	int32_t ___U3CoffsetSpriteColorU3Ek__BackingField;
-	int32_t ___U3CoffsetRenderingLayerMaskU3Ek__BackingField;
-};
 struct RenderingLayerMask_tD73B9FC1A65A937F18E56833FC83BF89C2B085A1 
 {
 	uint32_t ___m_Bits;
-};
-struct ShadowEdge_t9B99D17786729B2E4CDBEF396B52B6E49B3D55A3 
-{
-	int32_t ___v0;
-	int32_t ___v1;
 };
 struct Substring_t2E16755269E6716C22074D6BC0A9099915E67849 
 {
@@ -945,11 +752,6 @@ struct Substring_t2E16755269E6716C22074D6BC0A9099915E67849_marshaled_com
 	Il2CppChar* ___m_String;
 	int32_t ___m_Index;
 	int32_t ___m_Length;
-};
-struct TerrainTileCoord_t2181DDF40A8A428A84817957CB7FB19A314F4F09 
-{
-	int32_t ___tileX;
-	int32_t ___tileZ;
 };
 struct TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A 
 {
@@ -1029,10 +831,46 @@ struct AllocatorHandle_t3CA09720B1F89F91A8DDBA95E74C28A1EC3E3148
 	uint16_t ___Index;
 	uint16_t ___Version;
 };
+struct OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837 
+{
+	int32_t ___order;
+	UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* ___callback;
+};
+struct OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837_marshaled_pinvoke
+{
+	int32_t ___order;
+	Il2CppMethodPointer ___callback;
+};
+struct OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837_marshaled_com
+{
+	int32_t ___order;
+	Il2CppMethodPointer ___callback;
+};
+struct Page_t04FE552A388BF55B12C8868E19589136957E00A5 
+{
+	uint16_t ___x;
+	uint16_t ___y;
+	int32_t ___freeSlots;
+};
 struct Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE 
 {
 	int32_t ___offset;
 	int32_t ___count;
+};
+struct RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301 
+{
+	RTHandle_t135537761C47BC929F032B3C8F4D55EA1111B07B* ___handle;
+	int32_t ___stableIndex;
+};
+struct RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301_marshaled_pinvoke
+{
+	RTHandle_t135537761C47BC929F032B3C8F4D55EA1111B07B* ___handle;
+	int32_t ___stableIndex;
+};
+struct RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301_marshaled_com
+{
+	RTHandle_t135537761C47BC929F032B3C8F4D55EA1111B07B* ___handle;
+	int32_t ___stableIndex;
 };
 struct TableRange_tD242F3D62C818E84B6903C18A6CE33399672B497 
 {
@@ -2612,153 +2450,6 @@ struct Entry_t78A61BBE85A3FFE3886B934686D3D859F8222216
 	ConverterKey_t75727CB0FFE3A81C5102B732E634716945F73E9B ___key;
 	Il2CppSharedGenericObject* ___value;
 };
-struct Entry_t8E0607D0D280AFF4BA0B4003E0B3E47A31AD877A 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	int32_t ___value;
-};
-struct Entry_tEC145FCBBA153DCB0712DA30A9C199492E165471 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_t2263C470F412A321D26C315A7AB4281D4750B52F 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	uint8_t ___value;
-};
-struct Entry_t2DA21BA00F260E03F86FAC60B2566C88B97DD864 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	FontAssetRef_t13D11FF02B5009724B829DBC1C9AC5493170606F ___value;
-};
-struct Entry_t75CD478BC9A5CC3855BC163C86C3ABA9C5B86E60 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	FontAssetRef_t7B8E634754BC5683F1E6601D7CD0061285A28FF3 ___value;
-};
-struct Entry_t385D55B7BB5A3AD762B8087CBDA8389D3818AF28 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	Guid_t ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_t0EB65A1B365B703296F1AA6C9886F8B85EDBED78 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___value;
-};
-struct Entry_t7CE9E7B40ACCEAB7712065D95D28EEF626D8DABC 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	RenderInstancedDataLayout_t06AF33510AC89DBD09A3A161FF809EDFAB30EC7A ___value;
-};
-struct Entry_t09EBFBD470C99B94AB42591B4B95C202082FDFA3 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	RenderSpriteInstancedDataLayout_t4129388FA190352FA5AC84729B01A7AB44DFEAB9 ___value;
-};
-struct Entry_t57FAB7B3B72CEF97C2C3195D29213CE2E994EB7E 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	CellStreamingScratchBufferLayout_t9C3A198B967DCECDB79C97C05BEFAEA74E70077E ___value;
-};
-struct Entry_t6CB2C9C76B8422AA5DF5DD1E87052DD6EB445097 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	StreamableCellDesc_t30C9692E80F3E2FD12CF286548763F9F4DE5048A ___value;
-};
-struct Entry_t4F0B35124785FD59A34054EADD56FBA4EAA12AEC 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	CategoryEntrySprite_t921E1B4FF6D1C2E396E4012894CED7DE39892074 ___value;
-};
-struct Entry_tDE3185C2F06F1AB3103EE59F89D5AE31F6D2AC60 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	PassCompatibilityInfo_tD79DCD78EC09F9D22A9E203048C684EEC9C237F3 ___value;
-};
-struct Entry_tA10AF69FA088B432C53449C37561D0D0CC66FBAB 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	InternalManagedFileHandle_t1578FEE483FEB6924F10CD3016EFAA2A1B9FD391 ___key;
-	Binding_t4902D3C6D27680D096CC41D83FFD0872785E57F8 ___value;
-};
-struct Entry_tE8CF104B482ED92A3BF31C2B151BD3FEBFAF2F6F 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735 ___key;
-	InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735 ___value;
-};
-struct Entry_t34B6D583A00284229FE234A36EA77A116B2E9FCB 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735 ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_t5DA42CAF95F196F03BDD802C9D4F704954B556AB 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	InternedString_t8D62A48CB7D85AAE9CFCCCFB0A77AC2844905735 ___key;
-	PrecompiledLayout_tEFFE070A47145E8B18D5003F777983D278034A63 ___value;
-};
-struct Entry_t5536CC094AFB005C6BD131FC8186E873ED50E19E 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	LifecycleScopeKey_t786C4635697BF09DC1C3BA0331E34017B8BA961D ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_t23427BBC8CA174E223D4307671412E208FF6204C 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	PropertyName_tE4B4AAA58AF3BF2C0CD95509EB7B786F096901C2 ___key;
-	Il2CppSharedGenericObject* ___value;
-};
-struct Entry_tBBA1E489C5D1F1852F591F5F85CDC4B9AC0460D5 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	ShadowEdge_t9B99D17786729B2E4CDBEF396B52B6E49B3D55A3 ___key;
-	int32_t ___value;
-};
-struct Entry_t4603205C33221F16AC10A86CE4AEA11F0DFC41E5 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	TerrainTileCoord_t2181DDF40A8A428A84817957CB7FB19A314F4F09 ___key;
-	Il2CppSharedGenericObject* ___value;
-};
 struct InlinedArray_1_tCCDDAF60E5E0753897C733E70A407B21D4DCCD70 
 {
 	int32_t ___length;
@@ -2844,10 +2535,6 @@ struct Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Center;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_Extents;
-};
-struct CustomPropertyList_t48CD7F57B3FAE18133914CE45C38B1B6620A9B3A 
-{
-	intptr_t ___m_Data;
 };
 struct DrawPhase_t486494E09E3D14AEF7D5544440BD869D73BB7DA7 
 {
@@ -2974,22 +2661,9 @@ struct FixedBytes32Align8_t07C7D543B487721FF9B88AD85209956AE423A779
 	};
 };
 #pragma pack(pop, tp)
-struct FontFeatureLookupFlags_t2000121BA341A3CAE5E0D4FAC6AA4378FE14AE1B 
-{
-	int32_t ___value__;
-};
 struct GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC 
 {
 	intptr_t ___handle;
-};
-struct GlyphAdjustmentRecord_tC7A1B2E0AC7C4ED9CDB8E95E48790A46B6F315F7 
-{
-	uint32_t ___m_GlyphIndex;
-	GlyphValueRecord_t780927A39D46924E0D546A2AE5DDF1BB2B5A9C8E ___m_GlyphValueRecord;
-};
-struct GraphicsFenceType_t8C3F229DC2BE62FA78724BA3D35FFCB3A64F7E0A 
-{
-	int32_t ___value__;
 };
 struct InstanceOcclusionEventType_tF66ED25A6A1D3943D326795EA91E803D666ECF79 
 {
@@ -3011,41 +2685,9 @@ struct LightmapBakeType_tD6FF28E59BAAD80648796C2835AB8DC0B0F8B232
 {
 	int32_t ___value__;
 };
-struct MarkToBaseAdjustmentRecord_t03C041CB56601B46F025C69B899BBAB750201C71 
-{
-	uint32_t ___m_BaseGlyphID;
-	GlyphAnchorPoint_t1E0A7753CCCC41F22D3C408C4F96DDEC70291929 ___m_BaseGlyphAnchorPoint;
-	uint32_t ___m_MarkGlyphID;
-	MarkPositionAdjustment_tEE7CE316B8F61A7D6725524435B6363E849C62ED ___m_MarkPositionAdjustment;
-};
-struct MarkToBaseAdjustmentRecord_t4BE0F5A88932146F70A2B521176BDA91A20D8607 
-{
-	uint32_t ___m_BaseGlyphID;
-	GlyphAnchorPoint_t581FDCAD5A1D0F3B129968FAEF20C113AAB0BC08 ___m_BaseGlyphAnchorPoint;
-	uint32_t ___m_MarkGlyphID;
-	MarkPositionAdjustment_t2523798D56F14A93A080D9D1298498325A51F436 ___m_MarkPositionAdjustment;
-};
-struct MarkToMarkAdjustmentRecord_t5D12F757E4ECB2EA12EB404228D70FA4DDBD6654 
-{
-	uint32_t ___m_BaseMarkGlyphID;
-	GlyphAnchorPoint_t1E0A7753CCCC41F22D3C408C4F96DDEC70291929 ___m_BaseMarkGlyphAnchorPoint;
-	uint32_t ___m_CombiningMarkGlyphID;
-	MarkPositionAdjustment_tEE7CE316B8F61A7D6725524435B6363E849C62ED ___m_CombiningMarkPositionAdjustment;
-};
-struct MarkToMarkAdjustmentRecord_tD53618A3728435D5C904857DAC644EE27640807C 
-{
-	uint32_t ___m_BaseMarkGlyphID;
-	GlyphAnchorPoint_t581FDCAD5A1D0F3B129968FAEF20C113AAB0BC08 ___m_BaseMarkGlyphAnchorPoint;
-	uint32_t ___m_CombiningMarkGlyphID;
-	MarkPositionAdjustment_t2523798D56F14A93A080D9D1298498325A51F436 ___m_CombiningMarkPositionAdjustment;
-};
 struct OcclusionTest_tFF967683F812A2788B5C8A9A220B83B43060435E 
 {
 	int32_t ___value__;
-};
-struct OwnedState_t0957CA36E21DE8A443B616EBE83B25CCCA70B5A4 
-{
-	uint8_t ___value__;
 };
 struct PhysicsBody_t4D9A16A318F8485217B0416E238278FA77455CD0 
 {
@@ -3087,69 +2729,9 @@ struct ScaleMode_t16AD656758EE54C56B3DA34FE4F2033C9C2EE13D
 {
 	int32_t ___value__;
 };
-struct SelectorAccelerationCacheEntry_t6C50A668E6EA364E79F5FC423D6C3C524C98A6ED 
-{
-	uint8_t* ___m_BackingBuffer;
-	FlattenedSelectorPart_tD9EBC73D6704A9B622C3FF7F0DEB81EF0E115986* ___m_AllPartsPtr;
-	int32_t ___m_AllPartsCount;
-	FlattenedSelector_tB2AFFD9D91833D68734821D583367B18D35A0AC9* ___m_AllSelectorsPtr;
-	int32_t ___m_AllSelectorsCount;
-	SelectorRangeDescriptor_t7D9E7AED1604D7EC60BADD32A999A578BFC9AD72* ___m_AllDescriptorsPtr;
-	int32_t ___m_AllDescriptorsCount;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___nameTable;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___typeTable;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___classTable;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___rootSelectorRange;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___wildCardSelectorRange;
-	StyleSheet_t6FAF43FCDB45BC6BED0522A222FD4C1A9BB10428* ___ownerStyleSheet;
-	int32_t ___nonEmptyTablesMask;
-};
-struct SelectorAccelerationCacheEntry_t6C50A668E6EA364E79F5FC423D6C3C524C98A6ED_marshaled_pinvoke
-{
-	uint8_t* ___m_BackingBuffer;
-	FlattenedSelectorPart_tD9EBC73D6704A9B622C3FF7F0DEB81EF0E115986* ___m_AllPartsPtr;
-	int32_t ___m_AllPartsCount;
-	FlattenedSelector_tB2AFFD9D91833D68734821D583367B18D35A0AC9* ___m_AllSelectorsPtr;
-	int32_t ___m_AllSelectorsCount;
-	SelectorRangeDescriptor_t7D9E7AED1604D7EC60BADD32A999A578BFC9AD72* ___m_AllDescriptorsPtr;
-	int32_t ___m_AllDescriptorsCount;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___nameTable;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___typeTable;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___classTable;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___rootSelectorRange;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___wildCardSelectorRange;
-	StyleSheet_t6FAF43FCDB45BC6BED0522A222FD4C1A9BB10428* ___ownerStyleSheet;
-	int32_t ___nonEmptyTablesMask;
-};
-struct SelectorAccelerationCacheEntry_t6C50A668E6EA364E79F5FC423D6C3C524C98A6ED_marshaled_com
-{
-	uint8_t* ___m_BackingBuffer;
-	FlattenedSelectorPart_tD9EBC73D6704A9B622C3FF7F0DEB81EF0E115986* ___m_AllPartsPtr;
-	int32_t ___m_AllPartsCount;
-	FlattenedSelector_tB2AFFD9D91833D68734821D583367B18D35A0AC9* ___m_AllSelectorsPtr;
-	int32_t ___m_AllSelectorsCount;
-	SelectorRangeDescriptor_t7D9E7AED1604D7EC60BADD32A999A578BFC9AD72* ___m_AllDescriptorsPtr;
-	int32_t ___m_AllDescriptorsCount;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___nameTable;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___typeTable;
-	Dictionary_2_t902920A2A57DEC4AD45A155CE4BAFFBA76F07506* ___classTable;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___rootSelectorRange;
-	DescriptorRange_tC2A7A5A7D75FCB499F16F69429F589DBB2604874 ___wildCardSelectorRange;
-	StyleSheet_t6FAF43FCDB45BC6BED0522A222FD4C1A9BB10428* ___ownerStyleSheet;
-	int32_t ___nonEmptyTablesMask;
-};
 struct StylePropertyId_tA3B8A5213F5BA43F9C5443B27B165D744713BE69 
 {
 	int32_t ___value__;
-};
-struct TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 
-{
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___faceColor;
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___outlineColor;
-	float ___outlineWidth;
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___underlayColor;
-	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___underlayOffset;
-	float ___underlaySoftness;
 };
 struct TextProcessingElementType_t875F9E5219DA4EE68DD3FF4F9EA18BB497B388EA 
 {
@@ -4061,55 +3643,6 @@ struct Entry_t5EA141AD75269A4975B38F953AE57E49BA3F4547
 	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
 	ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7 ___value;
 };
-struct Entry_tE5A0B48132A639E6130919F8E9F3548C6774CDD7 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	SelectorAccelerationCacheEntry_t6C50A668E6EA364E79F5FC423D6C3C524C98A6ED ___value;
-};
-struct Entry_tF4F34D2511326EC9E1679AA6BF1AECED2329EC72 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___key;
-	CachedProbe_tC10A827C72825D45E4EDEC5B930D0B16B188C098 ___value;
-};
-struct Entry_t8E2CE60809C63E5505E5647876970A2F97068C98 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	PTLight_tBEB70EAD4BA181C3FDAFE151BEB34830CFF92778 ___value;
-};
-struct Entry_tE9F630515B2639FC32421D8BCA4A3FDA5DA81F57 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	MarkToBaseAdjustmentRecord_t03C041CB56601B46F025C69B899BBAB750201C71 ___value;
-};
-struct Entry_tEC1A94D2B396350073237678CBE5013D9C23336F 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	MarkToBaseAdjustmentRecord_t4BE0F5A88932146F70A2B521176BDA91A20D8607 ___value;
-};
-struct Entry_t6AE26C6078FCDA8F86904D21F25FCFF5D726FAC8 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	MarkToMarkAdjustmentRecord_t5D12F757E4ECB2EA12EB404228D70FA4DDBD6654 ___value;
-};
-struct Entry_tEFAC589ECF730F050787AF6E5CF97CF8C3529F88 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	MarkToMarkAdjustmentRecord_tD53618A3728435D5C904857DAC644EE27640807C ___value;
-};
 struct FixedList32Bytes_1_t02D797FE0EF11E83016BA95DD7B282490C8A472E 
 {
 	alignas(8) FixedBytes32Align8_t07C7D543B487721FF9B88AD85209956AE423A779 ___data;
@@ -4184,37 +3717,6 @@ struct NativeArray_1_tE60150ECC1618145E24B39FDB42788271982A962
 	void* ___m_Buffer;
 	int32_t ___m_Length;
 	int32_t ___m_AllocatorLabel;
-};
-struct BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 
-{
-	int32_t ___page;
-	uint16_t ___pageLine;
-	uint8_t ___bitIndex;
-	uint8_t ___ownedState;
-};
-struct ComputedStyle_t8B08CCCEE20525528B3FFDAC6D3F58F101AAF54C 
-{
-	StyleDataRef_1_tBB9987581539847AE5CCA2EA2349E05CDC9127FA ___inheritedData;
-	StyleDataRef_1_t5330A6F4EAC0EAB88E3B9849D866AA23BB6BE5F4 ___layoutData;
-	StyleDataRef_1_tF773E9CBC6DC0FEB38DF95A6F3F47AC49AE045B3 ___rareData;
-	StyleDataRef_1_t1D59CCAB740BE6B330D5B5FDA9F67391800200B3 ___transformData;
-	StyleDataRef_1_t6A7B146DD79EDF7F42CD8CCF3E411B40AA729B8E ___transitionData;
-	StyleDataRef_1_t9CB834B90E638D92A3BE5123B0D3989697AA87FC ___visualData;
-	CustomPropertyList_t48CD7F57B3FAE18133914CE45C38B1B6620A9B3A ___m_CustomProperties;
-	int64_t ___matchingRulesHash;
-	float ___dpiScaling;
-};
-struct GlyphPairAdjustmentRecord_t6E4295094D349DBF22BC59116FBC8F22EA55420E 
-{
-	GlyphAdjustmentRecord_tC7A1B2E0AC7C4ED9CDB8E95E48790A46B6F315F7 ___m_FirstAdjustmentRecord;
-	GlyphAdjustmentRecord_tC7A1B2E0AC7C4ED9CDB8E95E48790A46B6F315F7 ___m_SecondAdjustmentRecord;
-	int32_t ___m_FeatureLookupFlags;
-};
-struct GraphicsFence_t199180163AEDE0C1BE868F8E1314A47610B1FABB 
-{
-	intptr_t ___m_Ptr;
-	int32_t ___m_Version;
-	int32_t ___m_FenceType;
 };
 struct InputBinding_t0D75BD1538CF81D29450D568D5C938E111633EC5 
 {
@@ -4785,13 +4287,6 @@ struct TileData_tFB814629D010ABD175127C0BE96FD96EA606E00F
 struct UnsafeMeshGenerationNode_t1FF7D38D9B39DC59A2F8E2DFC92BFAB2481E88A2 
 {
 	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ___m_Handle;
-};
-struct WorldSpaceData_t1F653E7DB8EA00BA1A22EC93964627BCB938E922 
-{
-	Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 ___localBounds3D;
-	Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 ___localBoundsPicking3D;
-	Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 ___localBoundsWithoutNested3D;
-	Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___boundingBoxWithoutNested;
 };
 struct PathArguments_t445220F54870AED8F8384306CF72A316887AD98C 
 {
@@ -5375,41 +4870,6 @@ struct EmbeddedArray32_1_tB435A10C3DB5E0B01F53C5CF569FEF40BB061A96
 	bool ___m_Created;
 	bool ___m_IsEmbedded;
 };
-struct Entry_t6E3617D543B4D6B204B7728D9E47A38BA5CEB5BB 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	GraphicsFence_t199180163AEDE0C1BE868F8E1314A47610B1FABB ___value;
-};
-struct Entry_tA76B18EF78BF0132EE1736D5F5B829D890C26E5C 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int64_t ___key;
-	ComputedStyle_t8B08CCCEE20525528B3FFDAC6D3F58F101AAF54C ___value;
-};
-struct Entry_t7F90B7561F60FCDA9E0C2D5F7BEE326CF33B1C50 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___key;
-	BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___value;
-};
-struct Entry_t58E99ABABD435BCC040760EDD6D161FA4AFAD578 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	GlyphPairAdjustmentRecord_t6E4295094D349DBF22BC59116FBC8F22EA55420E ___value;
-};
-struct Entry_tB00AD2CD04F10BBE8D1509A2B176CA92D693542D 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	uint32_t ___key;
-	WorldSpaceData_t1F653E7DB8EA00BA1A22EC93964627BCB938E922 ___value;
-};
 struct InputControlList_1_tDCD1283F428BB911908D4A86066022F6FEF337BA 
 {
 	int32_t ___m_Count;
@@ -5454,21 +4914,6 @@ struct PropertyPath_tA523CA2740853534DF6C009C588464B45A6D0A79_marshaled_com
 };
 struct RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA  : public SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295
 {
-};
-struct TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388 
-{
-	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___handle;
-	bool ___builtin;
-};
-struct TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388_marshaled_pinvoke
-{
-	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___handle;
-	int32_t ___builtin;
-};
-struct TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388_marshaled_com
-{
-	ResourceHandle_tD3B1FFBD59EB9C23F0A020351836F834C4BD276C ___handle;
-	int32_t ___builtin;
 };
 struct GeometrySlot_tD424D8BAD216C628C1818B196A406745EC8AB5DA 
 {
@@ -5793,13 +5238,6 @@ struct PerScenarioData_tDBB689295599DE09FCA963F9282414EA2B240B55
 	NativeArray_1_t81F55263465517B73C455D3400CF67B4BADD85CF ___shL2Data_3;
 	NativeArray_1_t81F55263465517B73C455D3400CF67B4BADD85CF ___probeOcclusion;
 };
-struct Entry_t860658A268435C0F4527823E39101F707ABCC3A3 
-{
-	int32_t ___hashCode;
-	int32_t ___next;
-	int32_t ___key;
-	TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388 ___value;
-};
 struct BindingId_t8BBB6188CD126EACCA07816C78760E92DC16620E 
 {
 	PropertyPath_tA523CA2740853534DF6C009C588464B45A6D0A79 ___m_PropertyPath;
@@ -6013,6 +5451,10 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 	String_t* ___TrueString;
 	String_t* ___FalseString;
 };
+struct Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE_StaticFields
+{
+	Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE ___Invalid;
+};
 struct GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977_StaticFields
 {
 	GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977 ___Invalid;
@@ -6029,6 +5471,10 @@ struct TextureLocation_t792A6064A433846801EC0BFD7A8DCBE26B4C5346_StaticFields
 struct UsingEntry_t0454AD34026FDFD1733CE07BD4AE807B0FBCE484_StaticFields
 {
 	RuntimeObject* ___comparer;
+};
+struct Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C_StaticFields
+{
+	Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C ___Invalid;
 };
 struct LightMeshVertex_tC5C456CBCF889B89B395DCE82DBEBA91BEA3015A_StaticFields
 {
@@ -6059,6 +5505,406 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CachedCodeEntryKey_Equals_m59F40708B9717
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool KeyEvent_Equals_m76D27461C6112D06D6210AE73F9D2A43ED3B10D4 (KeyEvent_tCBB9830C9FA6B909A5A6BD122FF4B532126E7674* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Rune_Equals_mE3D6609368AB40A856C04A58E887B4123B0066E7 (Rune_tE8DB196113D1DBF48E710C120CC50D2AD7D5915E* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, String_t* ___0_message, const RuntimeMethod* method) ;
+// Method Definition Index: 2583
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_InternalArray__IndexOf_TisOrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837_mDBD0FB46B01ABF3DDAF2B784A3A3E91CC16C998F (RuntimeArray* __this, OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837 ___0_item, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	//<source_info:<no-source>:1>
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		int32_t L_0;
+		L_0 = il2cpp_codegen_array_get_rank(__this);
+		if ((((int32_t)L_0) <= ((int32_t)1)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA* L_1 = (RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA_il2cpp_TypeInfo_var)));
+		RankException__ctor_m92CFA18243797ADB9BA12DFF436EC3139DCFC48B(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral89EE3F7AE8AF1895B90AAC597B98A25EFB53DCF1)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, method);
+	}
+
+IL_0014:
+	{
+		int32_t L_2;
+		L_2 = il2cpp_codegen_array_get_length(__this);
+		V_0 = L_2;
+		V_1 = 0;
+		goto IL_0065;
+	}
+
+IL_001f:
+	{
+		int32_t L_3 = V_1;
+		GetGenericValueImpl(__this, L_3, (&V_2));
+		goto IL_0042;
+	}
+
+IL_0042:
+	{
+		OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837 L_5 = ___0_item;
+		OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837 L_6 = L_5;
+		RuntimeObject* L_7 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_6);
+		Il2CppFakeBox<OrderBlock_t62FD6F6544F34B5298DEF2F77AAE446F269B7837> L_8(il2cpp_rgctx_data(method->rgctx_data, 0), V_2);
+		bool L_9;
+		L_9 = ValueType_Equals_mCA5344597A8055EC544855AD60A983B10E0EE67D((ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F*)(&L_8), L_7, NULL);
+		if (!L_9)
+		{
+			goto IL_0061;
+		}
+	}
+	{
+		int32_t L_10 = V_1;
+		int32_t L_11;
+		L_11 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_add(L_10, L_11));
+	}
+
+IL_0061:
+	{
+		int32_t L_12 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+	}
+
+IL_0065:
+	{
+		int32_t L_13 = V_1;
+		int32_t L_14 = V_0;
+		if ((((int32_t)L_13) < ((int32_t)L_14)))
+		{
+			goto IL_001f;
+		}
+	}
+	{
+		int32_t L_15;
+		L_15 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_subtract(L_15, 1));
+	}
+}
+// Method Definition Index: 2583
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_InternalArray__IndexOf_TisPage_t04FE552A388BF55B12C8868E19589136957E00A5_m2326940FBBFF6C4D56FA7B8FC99DDF815289E2F9 (RuntimeArray* __this, Page_t04FE552A388BF55B12C8868E19589136957E00A5 ___0_item, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	//<source_info:<no-source>:1>
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	Page_t04FE552A388BF55B12C8868E19589136957E00A5 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		int32_t L_0;
+		L_0 = il2cpp_codegen_array_get_rank(__this);
+		if ((((int32_t)L_0) <= ((int32_t)1)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA* L_1 = (RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA_il2cpp_TypeInfo_var)));
+		RankException__ctor_m92CFA18243797ADB9BA12DFF436EC3139DCFC48B(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral89EE3F7AE8AF1895B90AAC597B98A25EFB53DCF1)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, method);
+	}
+
+IL_0014:
+	{
+		int32_t L_2;
+		L_2 = il2cpp_codegen_array_get_length(__this);
+		V_0 = L_2;
+		V_1 = 0;
+		goto IL_0065;
+	}
+
+IL_001f:
+	{
+		int32_t L_3 = V_1;
+		GetGenericValueImpl(__this, L_3, (&V_2));
+		goto IL_0042;
+	}
+
+IL_0042:
+	{
+		Page_t04FE552A388BF55B12C8868E19589136957E00A5 L_5 = ___0_item;
+		Page_t04FE552A388BF55B12C8868E19589136957E00A5 L_6 = L_5;
+		RuntimeObject* L_7 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_6);
+		Il2CppFakeBox<Page_t04FE552A388BF55B12C8868E19589136957E00A5> L_8(il2cpp_rgctx_data(method->rgctx_data, 0), V_2);
+		bool L_9;
+		L_9 = ValueType_Equals_mCA5344597A8055EC544855AD60A983B10E0EE67D((ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F*)(&L_8), L_7, NULL);
+		if (!L_9)
+		{
+			goto IL_0061;
+		}
+	}
+	{
+		int32_t L_10 = V_1;
+		int32_t L_11;
+		L_11 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_add(L_10, L_11));
+	}
+
+IL_0061:
+	{
+		int32_t L_12 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+	}
+
+IL_0065:
+	{
+		int32_t L_13 = V_1;
+		int32_t L_14 = V_0;
+		if ((((int32_t)L_13) < ((int32_t)L_14)))
+		{
+			goto IL_001f;
+		}
+	}
+	{
+		int32_t L_15;
+		L_15 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_subtract(L_15, 1));
+	}
+}
+// Method Definition Index: 2583
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_InternalArray__IndexOf_TisAllocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C_m3CFE157433326A358BFE2400DAD31BB31258C9B7 (RuntimeArray* __this, Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C ___0_item, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	//<source_info:<no-source>:1>
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		int32_t L_0;
+		L_0 = il2cpp_codegen_array_get_rank(__this);
+		if ((((int32_t)L_0) <= ((int32_t)1)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA* L_1 = (RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA_il2cpp_TypeInfo_var)));
+		RankException__ctor_m92CFA18243797ADB9BA12DFF436EC3139DCFC48B(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral89EE3F7AE8AF1895B90AAC597B98A25EFB53DCF1)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, method);
+	}
+
+IL_0014:
+	{
+		int32_t L_2;
+		L_2 = il2cpp_codegen_array_get_length(__this);
+		V_0 = L_2;
+		V_1 = 0;
+		goto IL_0065;
+	}
+
+IL_001f:
+	{
+		int32_t L_3 = V_1;
+		GetGenericValueImpl(__this, L_3, (&V_2));
+		goto IL_0042;
+	}
+
+IL_0042:
+	{
+		Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C L_5 = ___0_item;
+		Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C L_6 = L_5;
+		RuntimeObject* L_7 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_6);
+		Il2CppFakeBox<Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C> L_8(il2cpp_rgctx_data(method->rgctx_data, 0), V_2);
+		bool L_9;
+		L_9 = ValueType_Equals_mCA5344597A8055EC544855AD60A983B10E0EE67D((ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F*)(&L_8), L_7, NULL);
+		if (!L_9)
+		{
+			goto IL_0061;
+		}
+	}
+	{
+		int32_t L_10 = V_1;
+		int32_t L_11;
+		L_11 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_add(L_10, L_11));
+	}
+
+IL_0061:
+	{
+		int32_t L_12 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+	}
+
+IL_0065:
+	{
+		int32_t L_13 = V_1;
+		int32_t L_14 = V_0;
+		if ((((int32_t)L_13) < ((int32_t)L_14)))
+		{
+			goto IL_001f;
+		}
+	}
+	{
+		int32_t L_15;
+		L_15 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_subtract(L_15, 1));
+	}
+}
+// Method Definition Index: 2583
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_InternalArray__IndexOf_TisBlock_tBD2149E220F819A66A4A0A18F237932ACD9011DE_m77299CFDE29BA7AD4495105F9978970E6D1A80D1 (RuntimeArray* __this, Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE ___0_item, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	//<source_info:<no-source>:1>
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		int32_t L_0;
+		L_0 = il2cpp_codegen_array_get_rank(__this);
+		if ((((int32_t)L_0) <= ((int32_t)1)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA* L_1 = (RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA_il2cpp_TypeInfo_var)));
+		RankException__ctor_m92CFA18243797ADB9BA12DFF436EC3139DCFC48B(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral89EE3F7AE8AF1895B90AAC597B98A25EFB53DCF1)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, method);
+	}
+
+IL_0014:
+	{
+		int32_t L_2;
+		L_2 = il2cpp_codegen_array_get_length(__this);
+		V_0 = L_2;
+		V_1 = 0;
+		goto IL_0065;
+	}
+
+IL_001f:
+	{
+		int32_t L_3 = V_1;
+		GetGenericValueImpl(__this, L_3, (&V_2));
+		goto IL_0042;
+	}
+
+IL_0042:
+	{
+		Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE L_5 = ___0_item;
+		Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE L_6 = L_5;
+		RuntimeObject* L_7 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_6);
+		Il2CppFakeBox<Block_tBD2149E220F819A66A4A0A18F237932ACD9011DE> L_8(il2cpp_rgctx_data(method->rgctx_data, 0), V_2);
+		bool L_9;
+		L_9 = ValueType_Equals_mCA5344597A8055EC544855AD60A983B10E0EE67D((ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F*)(&L_8), L_7, NULL);
+		if (!L_9)
+		{
+			goto IL_0061;
+		}
+	}
+	{
+		int32_t L_10 = V_1;
+		int32_t L_11;
+		L_11 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_add(L_10, L_11));
+	}
+
+IL_0061:
+	{
+		int32_t L_12 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+	}
+
+IL_0065:
+	{
+		int32_t L_13 = V_1;
+		int32_t L_14 = V_0;
+		if ((((int32_t)L_13) < ((int32_t)L_14)))
+		{
+			goto IL_001f;
+		}
+	}
+	{
+		int32_t L_15;
+		L_15 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_subtract(L_15, 1));
+	}
+}
+// Method Definition Index: 2583
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_InternalArray__IndexOf_TisRTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301_mD33E3F1831751F56C8D9C66AD83174DFD6D7C7BC (RuntimeArray* __this, RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301 ___0_item, const RuntimeMethod* method) 
+{
+	il2cpp_rgctx_method_init(method);
+	//<source_info:<no-source>:1>
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		int32_t L_0;
+		L_0 = il2cpp_codegen_array_get_rank(__this);
+		if ((((int32_t)L_0) <= ((int32_t)1)))
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA* L_1 = (RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&RankException_t57E52FB1527D150EF5B5E031D2BA08B85BAE91BA_il2cpp_TypeInfo_var)));
+		RankException__ctor_m92CFA18243797ADB9BA12DFF436EC3139DCFC48B(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral89EE3F7AE8AF1895B90AAC597B98A25EFB53DCF1)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, method);
+	}
+
+IL_0014:
+	{
+		int32_t L_2;
+		L_2 = il2cpp_codegen_array_get_length(__this);
+		V_0 = L_2;
+		V_1 = 0;
+		goto IL_0065;
+	}
+
+IL_001f:
+	{
+		int32_t L_3 = V_1;
+		GetGenericValueImpl(__this, L_3, (&V_2));
+		goto IL_0042;
+	}
+
+IL_0042:
+	{
+		RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301 L_5 = ___0_item;
+		RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301 L_6 = L_5;
+		RuntimeObject* L_7 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_6);
+		Il2CppFakeBox<RTEntry_tF17BA88D95BE8A8B05A0D5823DA09F35238F7301> L_8(il2cpp_rgctx_data(method->rgctx_data, 0), V_2);
+		bool L_9;
+		L_9 = ValueType_Equals_mCA5344597A8055EC544855AD60A983B10E0EE67D((ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F*)(&L_8), L_7, NULL);
+		if (!L_9)
+		{
+			goto IL_0061;
+		}
+	}
+	{
+		int32_t L_10 = V_1;
+		int32_t L_11;
+		L_11 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_add(L_10, L_11));
+	}
+
+IL_0061:
+	{
+		int32_t L_12 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+	}
+
+IL_0065:
+	{
+		int32_t L_13 = V_1;
+		int32_t L_14 = V_0;
+		if ((((int32_t)L_13) < ((int32_t)L_14)))
+		{
+			goto IL_001f;
+		}
+	}
+	{
+		int32_t L_15;
+		L_15 = Array_GetLowerBound_m4FB0601E2E8A6304A42E3FC400576DF7B0F084BC(__this, 0, NULL);
+		return ((int32_t)il2cpp_codegen_subtract(L_15, 1));
+	}
+}
 // Method Definition Index: 2583
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_InternalArray__IndexOf_TisPathArguments_t445220F54870AED8F8384306CF72A316887AD98C_mDBB2BCD31A4101D8DED3E33A26C243BA490E6240 (RuntimeArray* __this, PathArguments_t445220F54870AED8F8384306CF72A316887AD98C ___0_item, const RuntimeMethod* method) 
 {
@@ -22068,452 +21914,3 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t5E
 	}
 }
 // Method Definition Index: 2581
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t8E0607D0D280AFF4BA0B4003E0B3E47A31AD877A_m8956AEC14A5315816E783BA39502D7E8755AB4AF (RuntimeArray* __this, int32_t ___0_index, Entry_t8E0607D0D280AFF4BA0B4003E0B3E47A31AD877A ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tE5A0B48132A639E6130919F8E9F3548C6774CDD7_m4A8607B3FEE4F694CB911C284394D692DB7F3A9E (RuntimeArray* __this, int32_t ___0_index, Entry_tE5A0B48132A639E6130919F8E9F3548C6774CDD7 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tEC145FCBBA153DCB0712DA30A9C199492E165471_m5E616040F551A81620A5178A66338996015813FB_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_tEC145FCBBA153DCB0712DA30A9C199492E165471 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t2263C470F412A321D26C315A7AB4281D4750B52F_mCE461D4DC9FF8ED44D1FCF56B1548F315252A0BC_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t2263C470F412A321D26C315A7AB4281D4750B52F ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tF4F34D2511326EC9E1679AA6BF1AECED2329EC72_mEA3358C92783E9E8C7EF7A3C0FD99A15F5DFD9A5 (RuntimeArray* __this, int32_t ___0_index, Entry_tF4F34D2511326EC9E1679AA6BF1AECED2329EC72 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t2DA21BA00F260E03F86FAC60B2566C88B97DD864_m5D55B38A3D677013965B7D050A3E79F6D4C96443 (RuntimeArray* __this, int32_t ___0_index, Entry_t2DA21BA00F260E03F86FAC60B2566C88B97DD864 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t75CD478BC9A5CC3855BC163C86C3ABA9C5B86E60_m55239289EB890146E6903202E56FBFAD56E5E514 (RuntimeArray* __this, int32_t ___0_index, Entry_t75CD478BC9A5CC3855BC163C86C3ABA9C5B86E60 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t385D55B7BB5A3AD762B8087CBDA8389D3818AF28_mF3D3E9344A67244B1F6BB0AB91F0D556A0444157_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t385D55B7BB5A3AD762B8087CBDA8389D3818AF28 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t740F919D5BA6D1FE201C58777E6EB966B35EE2EE_mF87C2901411DF09497E5EA9EE60917D237E81049 (RuntimeArray* __this, int32_t ___0_index, Entry_t740F919D5BA6D1FE201C58777E6EB966B35EE2EE ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t0EB65A1B365B703296F1AA6C9886F8B85EDBED78_m881667AA333D67C37D1B3E44CC89542D82656B8C (RuntimeArray* __this, int32_t ___0_index, Entry_t0EB65A1B365B703296F1AA6C9886F8B85EDBED78 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t6E3617D543B4D6B204B7728D9E47A38BA5CEB5BB_mD133B0B0B24208404EA91915D1CE81D588908A96 (RuntimeArray* __this, int32_t ___0_index, Entry_t6E3617D543B4D6B204B7728D9E47A38BA5CEB5BB ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tA212E7034D981AC2F7E219C600769EE485919684_m7DE05A76E0313C1C4BA91A674F23A6E2BA9E05E4 (RuntimeArray* __this, int32_t ___0_index, Entry_tA212E7034D981AC2F7E219C600769EE485919684 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t7CE9E7B40ACCEAB7712065D95D28EEF626D8DABC_m3BFFD02BB909CEF190F6B30584ECCED907928DC5 (RuntimeArray* __this, int32_t ___0_index, Entry_t7CE9E7B40ACCEAB7712065D95D28EEF626D8DABC ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t09EBFBD470C99B94AB42591B4B95C202082FDFA3_m3CE84A6F5DC63D5B4092D90CB602C73D26AD6106 (RuntimeArray* __this, int32_t ___0_index, Entry_t09EBFBD470C99B94AB42591B4B95C202082FDFA3 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t860658A268435C0F4527823E39101F707ABCC3A3_m945DD710A4C832DE7AC3D9D76A8F22184D719B86 (RuntimeArray* __this, int32_t ___0_index, Entry_t860658A268435C0F4527823E39101F707ABCC3A3 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t0AAB24E71075CFC8D9EE6B23B95E3BB82B223FAD_mDD166987FFB51BD18C2CDD6E57BAF9A084C57E5D (RuntimeArray* __this, int32_t ___0_index, Entry_t0AAB24E71075CFC8D9EE6B23B95E3BB82B223FAD ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tEF6BEA499CCB8C4F2AA974BD354B4E3BCFE5EC4B_m609BF6C0C1491512EFC6C3B8BA4268BB371F6048 (RuntimeArray* __this, int32_t ___0_index, Entry_tEF6BEA499CCB8C4F2AA974BD354B4E3BCFE5EC4B ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t4D3FDFE59398F64D5B4FFA1D66084EBA0830B286_m73FD8DADA5871DCB5D59A7061BE31553338A1A8D_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t4D3FDFE59398F64D5B4FFA1D66084EBA0830B286 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t57FAB7B3B72CEF97C2C3195D29213CE2E994EB7E_m6C73D7AB939697786BBBAB11B679281FBDD04E9A (RuntimeArray* __this, int32_t ___0_index, Entry_t57FAB7B3B72CEF97C2C3195D29213CE2E994EB7E ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t6CB2C9C76B8422AA5DF5DD1E87052DD6EB445097_mC59B84A3AAD2023770416BF6A5756B6A2BA66337 (RuntimeArray* __this, int32_t ___0_index, Entry_t6CB2C9C76B8422AA5DF5DD1E87052DD6EB445097 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t4F0B35124785FD59A34054EADD56FBA4EAA12AEC_m978518C460FD512E64E3E4D7E7BB3F9CA1289332 (RuntimeArray* __this, int32_t ___0_index, Entry_t4F0B35124785FD59A34054EADD56FBA4EAA12AEC ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t8E2CE60809C63E5505E5647876970A2F97068C98_mEA6DFBCD12DE672F7BF47FB1D8881CEE2C548979 (RuntimeArray* __this, int32_t ___0_index, Entry_t8E2CE60809C63E5505E5647876970A2F97068C98 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tDE3185C2F06F1AB3103EE59F89D5AE31F6D2AC60_m8E8CE7BAB731CF1ABF2441C1696A30C1DA9B06A1 (RuntimeArray* __this, int32_t ___0_index, Entry_tDE3185C2F06F1AB3103EE59F89D5AE31F6D2AC60 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tA76B18EF78BF0132EE1736D5F5B829D890C26E5C_mF0BA4EB2D2C1A42E24A5C7EC04BB87F410018004 (RuntimeArray* __this, int32_t ___0_index, Entry_tA76B18EF78BF0132EE1736D5F5B829D890C26E5C ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t25AC885273EAD139C461A67DBF3DA0F0CF022339_mF9E926FA88AC04C08C1D3934E1881E2E9EBA226E_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t25AC885273EAD139C461A67DBF3DA0F0CF022339 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tA10AF69FA088B432C53449C37561D0D0CC66FBAB_m3E3DE29A6104A4F15ABA7B74ACDA03654203B7C6 (RuntimeArray* __this, int32_t ___0_index, Entry_tA10AF69FA088B432C53449C37561D0D0CC66FBAB ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tE8CF104B482ED92A3BF31C2B151BD3FEBFAF2F6F_mBBF79A0BDA569EF4E938A45670FFB0844D2C93EA (RuntimeArray* __this, int32_t ___0_index, Entry_tE8CF104B482ED92A3BF31C2B151BD3FEBFAF2F6F ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t34B6D583A00284229FE234A36EA77A116B2E9FCB_m21456E026CEA9F951C1F5FBDF1AA0441138BDD1B_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t34B6D583A00284229FE234A36EA77A116B2E9FCB ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t5DA42CAF95F196F03BDD802C9D4F704954B556AB_m05E8DBA8E50B11CE5842498BAEC2BA43FE99DC56 (RuntimeArray* __this, int32_t ___0_index, Entry_t5DA42CAF95F196F03BDD802C9D4F704954B556AB ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t5536CC094AFB005C6BD131FC8186E873ED50E19E_mB37E5E32593D4E44EAAF5688A06C0E08FE081BD4_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t5536CC094AFB005C6BD131FC8186E873ED50E19E ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t23427BBC8CA174E223D4307671412E208FF6204C_m2B5D025EACDF8BC489D667B338D03FA84917D7A0_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t23427BBC8CA174E223D4307671412E208FF6204C ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tBBA1E489C5D1F1852F591F5F85CDC4B9AC0460D5_m7333BF46CDE4801673CF81F839E95F105D061760 (RuntimeArray* __this, int32_t ___0_index, Entry_tBBA1E489C5D1F1852F591F5F85CDC4B9AC0460D5 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t4603205C33221F16AC10A86CE4AEA11F0DFC41E5_mB5A20BE99804F566323A5032BC7797B728468D20_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_t4603205C33221F16AC10A86CE4AEA11F0DFC41E5 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t7F90B7561F60FCDA9E0C2D5F7BEE326CF33B1C50_mA557F6EF1A57EAC20EBFBC8B6A7C4A94B022A40E (RuntimeArray* __this, int32_t ___0_index, Entry_t7F90B7561F60FCDA9E0C2D5F7BEE326CF33B1C50 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t58E99ABABD435BCC040760EDD6D161FA4AFAD578_mE64040F2C104B94E317E7A66F436711EEED0C20F (RuntimeArray* __this, int32_t ___0_index, Entry_t58E99ABABD435BCC040760EDD6D161FA4AFAD578 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t2679F25F22E3E7DB5F988C82C064BA4BE59F5677_m2EE7A2B9DF7A6AB98DB38FF637578D7E569DB5B1 (RuntimeArray* __this, int32_t ___0_index, Entry_t2679F25F22E3E7DB5F988C82C064BA4BE59F5677 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tE9F630515B2639FC32421D8BCA4A3FDA5DA81F57_mCA9717D2C4E3C6030A8BE5251700474D46FB8C60 (RuntimeArray* __this, int32_t ___0_index, Entry_tE9F630515B2639FC32421D8BCA4A3FDA5DA81F57 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tEC1A94D2B396350073237678CBE5013D9C23336F_mA1DE66F12FC985978D5673A11AE4C4642AD4BDF9 (RuntimeArray* __this, int32_t ___0_index, Entry_tEC1A94D2B396350073237678CBE5013D9C23336F ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t6AE26C6078FCDA8F86904D21F25FCFF5D726FAC8_m343C617AB4BAA4F172E11C2D9501422CF40AFB8A (RuntimeArray* __this, int32_t ___0_index, Entry_t6AE26C6078FCDA8F86904D21F25FCFF5D726FAC8 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tEFAC589ECF730F050787AF6E5CF97CF8C3529F88_mA47B8C919C30E07907E2A46F8AA0217514C352B5 (RuntimeArray* __this, int32_t ___0_index, Entry_tEFAC589ECF730F050787AF6E5CF97CF8C3529F88 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_t8DBA43D6278FB62ADE0F36B5405862F425F5D218_mD38C7D70DFA33E177E02DFBF417FA733B5FEC66A (RuntimeArray* __this, int32_t ___0_index, Entry_t8DBA43D6278FB62ADE0F36B5405862F425F5D218 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tB00AD2CD04F10BBE8D1509A2B176CA92D693542D_m3DB78041CD0779A49B633461571E8A42A583DE53 (RuntimeArray* __this, int32_t ___0_index, Entry_tB00AD2CD04F10BBE8D1509A2B176CA92D693542D ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tEB46DBF39E6F936D9793B0EE07CA4AFCE97193AB_m50E8ED6EC70406111D511184023FB2B652AF611B_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_tEB46DBF39E6F936D9793B0EE07CA4AFCE97193AB ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}
-// Method Definition Index: 2581
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_InternalArray__Insert_TisEntry_tE39EFE8390317589FD9BFA3B38B542860BFE0172_m9A959DAE3A9DB5D469EBDA29EE7349F59A0E6842_gshared (RuntimeArray* __this, int32_t ___0_index, Entry_tE39EFE8390317589FD9BFA3B38B542860BFE0172 ___1_item, const RuntimeMethod* method) 
-{
-	//<source_info:<no-source>:1>
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_mE174750CF0247BBB47544FFD71D66BB89630945B(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralE609303EB41E0119BB804EB107C7CCDF29D97D5B)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, method);
-	}
-}

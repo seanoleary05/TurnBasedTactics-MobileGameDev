@@ -22620,7 +22620,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Dictionary_2_System_Collection
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 35013
+// Method Definition Index: 35030
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t InternalManagedFileHandle_GetHashCode_mE32B81694AB4072CB85B3DB3AE79CCFC80D534D4_inline (InternalManagedFileHandle_t1578FEE483FEB6924F10CD3016EFAA2A1B9FD391* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -22629,7 +22629,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t InternalManagedFileHandle
 		return L_0;
 	}
 }
-// Method Definition Index: 34122
+// Method Definition Index: 34134
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PropertyName_GetHashCode_m7D4B878BA78625CDD78C9B045B5EADFDBF94C378_inline (PropertyName_tE4B4AAA58AF3BF2C0CD95509EB7B786F096901C2* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>

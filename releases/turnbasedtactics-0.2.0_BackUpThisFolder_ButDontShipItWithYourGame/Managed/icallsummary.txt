@@ -322,8 +322,10 @@ UnityEngine.Application::get_runInBackground
 UnityEngine.Application::get_unityVersionMaj
 UnityEngine.Application::get_unityVersionVer
 UnityEngine.Application::OpenURL_Injected
+UnityEngine.Application::get_persistentDataPath_Injected
 UnityEngine.Application::get_productName_Injected
 UnityEngine.Application::get_streamingAssetsPath_Injected
+UnityEngine.Application::get_version_Injected
 UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
 UnityEngine.AssetBundle::LoadAsset_Internal_Injected
@@ -373,6 +375,7 @@ UnityEngine.Camera::get_orthographicSize_Injected
 UnityEngine.Camera::ResetWorldToCameraMatrix_Injected
 UnityEngine.Camera::ScreenPointToRay_Injected
 UnityEngine.Camera::ScreenToViewportPoint_Injected
+UnityEngine.Camera::ScreenToWorldPoint_Injected
 UnityEngine.Camera::SetStereoProjectionMatrix_Injected
 UnityEngine.Camera::SetStereoViewMatrix_Injected
 UnityEngine.Camera::SetupCurrent_Injected
@@ -589,6 +592,7 @@ UnityEngine.Font::Internal_CreateFont_Injected
 UnityEngine.FrameTimingManager::GetLatestTimings_Injected
 UnityEngine.FrameTimingManager::CaptureFrameTimings
 UnityEngine.GameObject::GetComponentsInternal_Injected
+UnityEngine.GameObject::IsDestroying_Injected
 UnityEngine.GameObject::get_activeInHierarchy_Injected
 UnityEngine.GameObject::get_activeSelf_Injected
 UnityEngine.GameObject::get_isStatic_Injected
@@ -1000,8 +1004,8 @@ UnityEngine.Object::IsPersistent_Injected
 UnityEngine.Object::GetOffsetOfInstanceIDInCPlusPlusObject
 UnityEngine.Object::FindObjectFromInstanceID_Injected
 UnityEngine.Object::ForceLoadFromInstanceID_Injected
+UnityEngine.Object::Internal_CloneSingleWithParent_Injected
 UnityEngine.Object::Internal_CloneSingle_Injected
-UnityEngine.Object::Internal_InstantiateSingle_Injected
 UnityEngine.Object::DestroyImmediate_Injected
 UnityEngine.Object::Destroy_Injected
 UnityEngine.Object::DontDestroyOnLoad_Injected
@@ -1546,6 +1550,7 @@ UnityEngine.SpriteRenderer::get_flipX_Injected
 UnityEngine.SpriteRenderer::get_flipY_Injected
 UnityEngine.SpriteRenderer::get_sprite_Injected
 UnityEngine.SpriteRenderer::get_size_Injected
+UnityEngine.SpriteRenderer::set_color_Injected
 UnityEngine.SpriteRenderer::set_hasSpriteChangeEvents_Injected
 UnityEngine.SpriteRenderer::set_sprite_Injected
 UnityEngine.SpriteRenderer::get_drawMode_Injected
