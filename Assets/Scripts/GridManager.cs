@@ -88,8 +88,14 @@ public class GridManager : MonoBehaviour
         Tile tapped = TileAtScreen(screenPos);
         if (tapped == _selected) tapped = null;   // tapping the selected tile deselects it
 
-        if (_selected != null) _selected.SetSelected(false);
+        if (_selected != null) _selected.SetHighlight(Highlight.None);
         _selected = tapped;
-        if (_selected != null) _selected.SetSelected(true);
+        if (_selected != null) _selected.SetHighlight(Highlight.Selected);
     }
+
+    public void ClearHighlights()
+{
+    foreach (var tile in _tiles.Values)
+        tile.SetHighlight(Highlight.None);
+}
 }
