@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,8 +6,8 @@ public class GridManager : MonoBehaviour
 {
     public static GridManager Instance { get; private set; }
 
-    [SerializeField] private int width = 3;
-    [SerializeField] private int height = 4;
+    [SerializeField] private int width = 6;
+    [SerializeField] private int height = 8;
     [SerializeField] private Color lightColor = new Color(0.8f, 0.8f, 0.8f);
     [SerializeField] private Color darkColor = new Color(0.2f, 0.2f, 0.2f);
 
@@ -16,11 +17,16 @@ public class GridManager : MonoBehaviour
 
     private readonly Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
     private readonly Dictionary<Vector2Int, Unit> _occupants = new Dictionary<Vector2Int, Unit>();
-    private Tile _selected;
+
+    // Reused by the search below so it creates no garbage after the first call.
+    private readonly Queue<Vector2Int> _frontier = new Queue<Vector2Int>();
+    private readonly Dictionary<Vector2Int, int> _steps = new Dictionary<Vector2Int, int>();
+
+    private static readonly Vector2Int[] Dirs =
+        { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
 
     public int Width => width;
     public int Height => height;
-    public Tile Selected => _selected;
 
     void Awake()
     {
@@ -28,9 +34,6 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
         CenterCamera();
     }
-
-    void OnEnable()  => TapSwipeInput.Tapped += OnTapped;
-    void OnDisable() => TapSwipeInput.Tapped -= OnTapped;
 
     void OnDestroy()
     {
@@ -63,30 +66,30 @@ public class GridManager : MonoBehaviour
     {
         Vector3 center = gridParent.TransformPoint(new Vector3((width - 1) * 0.5f, (height - 1) * 0.5f, 0f));
         _cam.position = new Vector3(center.x, center.y, _cam.position.z);
+
+        // Step 1: fit the whole grid on a portrait screen, with room for UI above and below.
+        var cam = _cam.GetComponent<Camera>();
+        cam.orthographicSize = Mathf.Max(height * 0.5f + 1f, (width * 0.5f + 0.5f) / cam.aspect);
     }
+
+    // ---------- Tiles ----------
 
     public Tile GetTile(Vector2Int coord) =>
         _tiles.TryGetValue(coord, out var tile) ? tile : null;
 
-
-    public Vector3 GridToWorld(Vector2Int c) =>
-    gridParent.TransformPoint(new Vector3(c.x, c.y, 0f));
+    public void ClearHighlights()
+    {
+        foreach (var tile in _tiles.Values)
+            tile.SetHighlight(Highlight.None);
+    }
 
     public bool InBounds(Vector2Int c) =>
         c.x >= 0 && c.y >= 0 && c.x < width && c.y < height;
 
-    public Unit GetOccupant(Vector2Int c) =>
-        _occupants.TryGetValue(c, out var u) ? u : null;
+    // ---------- Coordinates ----------
 
-    public void SetOccupant(Vector2Int c, Unit u) => _occupants[c] = u;
-
-    // Only clears the tile if this unit is the one on it, so a stale call can't wipe another unit.
-    public void ClearOccupant(Vector2Int c, Unit u)
-{
-    if (_occupants.TryGetValue(c, out var cur) && cur == u)
-        _occupants.Remove(c);
-}
-
+    public Vector3 GridToWorld(Vector2Int c) =>
+        gridParent.TransformPoint(new Vector3(c.x, c.y, 0f));
 
     public Vector2Int WorldToGrid(Vector3 world)
     {
@@ -102,21 +105,64 @@ public class GridManager : MonoBehaviour
         return GetTile(WorldToGrid(world));
     }
 
-    void OnTapped(Vector2 screenPos)
+    // Grid distance: steps up/down/left/right, no diagonals. 1 means adjacent.
+    public static int Distance(Vector2Int a, Vector2Int b) =>
+        Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
+
+    // ---------- Occupancy ----------
+
+    public Unit GetOccupant(Vector2Int c) =>
+        _occupants.TryGetValue(c, out var u) ? u : null;
+
+    public void SetOccupant(Vector2Int c, Unit u) => _occupants[c] = u;
+
+    public void ClearOccupant(Vector2Int c, Unit u)
     {
-        if (LifecycleGuard.IsPaused) return;
-
-        Tile tapped = TileAtScreen(screenPos);
-        if (tapped == _selected) tapped = null;   // tapping the selected tile deselects it
-
-        if (_selected != null) _selected.SetHighlight(Highlight.None);
-        _selected = tapped;
-        if (_selected != null) _selected.SetHighlight(Highlight.Selected);
+        if (_occupants.TryGetValue(c, out var cur) && cur == u)
+            _occupants.Remove(c);
     }
 
-    public void ClearHighlights()
-{
-    foreach (var tile in _tiles.Values)
-        tile.SetHighlight(Highlight.None);
-}
+    // ---------- Queries for the turn system and AI ----------
+
+    // Fills `results` with every empty tile the unit can walk to within its Move range.
+    // Other units (friend or foe) block the path. The unit's own tile is not included.
+    public void GetReachable(Unit unit, List<Vector2Int> results)
+    {
+        results.Clear();
+        _frontier.Clear();
+        _steps.Clear();
+
+        _frontier.Enqueue(unit.Coord);
+        _steps[unit.Coord] = 0;
+
+        while (_frontier.Count > 0)
+        {
+            Vector2Int cur = _frontier.Dequeue();
+            int s = _steps[cur];
+            if (s == unit.Move) continue;            // out of movement
+
+            foreach (var d in Dirs)
+            {
+                Vector2Int next = cur + d;
+                if (!InBounds(next) || _steps.ContainsKey(next)) continue;
+                if (GetOccupant(next) != null) continue; // blocked
+
+                _steps[next] = s + 1;
+                _frontier.Enqueue(next);
+                results.Add(next);
+            }
+        }
+    }
+
+    // Fills `results` with living enemy units directly next to this unit.
+    public void GetAttackTargets(Unit unit, List<Unit> results)
+    {
+        results.Clear();
+        foreach (var d in Dirs)
+        {
+            Unit other = GetOccupant(unit.Coord + d);
+            if (other != null && other.IsAlive && other.Team != unit.Team)
+                results.Add(other);
+        }
+    }
 }
