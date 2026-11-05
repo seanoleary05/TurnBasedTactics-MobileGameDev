@@ -15,6 +15,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Transform _cam;
 
     private readonly Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
+    private readonly Dictionary<Vector2Int, Unit> _occupants = new Dictionary<Vector2Int, Unit>();
     private Tile _selected;
 
     public int Width => width;
@@ -66,6 +67,26 @@ public class GridManager : MonoBehaviour
 
     public Tile GetTile(Vector2Int coord) =>
         _tiles.TryGetValue(coord, out var tile) ? tile : null;
+
+
+    public Vector3 GridToWorld(Vector2Int c) =>
+    gridParent.TransformPoint(new Vector3(c.x, c.y, 0f));
+
+    public bool InBounds(Vector2Int c) =>
+        c.x >= 0 && c.y >= 0 && c.x < width && c.y < height;
+
+    public Unit GetOccupant(Vector2Int c) =>
+        _occupants.TryGetValue(c, out var u) ? u : null;
+
+    public void SetOccupant(Vector2Int c, Unit u) => _occupants[c] = u;
+
+    // Only clears the tile if this unit is the one on it, so a stale call can't wipe another unit.
+    public void ClearOccupant(Vector2Int c, Unit u)
+{
+    if (_occupants.TryGetValue(c, out var cur) && cur == u)
+        _occupants.Remove(c);
+}
+
 
     public Vector2Int WorldToGrid(Vector3 world)
     {
