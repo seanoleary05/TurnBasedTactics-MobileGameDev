@@ -19,8 +19,12 @@ The following PlayerPrefs keys may be used:
 - `MusicVolume`
 - `SFXVolume`
 - `TutorialCompleted`
+- `wallet.coins` (int): soft-currency balance earned in play
+- `wallet.level` (int): number of upgrades bought
 
-These values store player settings and preferences only.
+These values store player settings, preferences and in-game progress only. The coin
+balance is a soft currency earned by playing; no real-money purchases are processed
+(the in-game "Buy 500 coins" button is a local stub and does not contact any store).
 
 ### Save Files
 

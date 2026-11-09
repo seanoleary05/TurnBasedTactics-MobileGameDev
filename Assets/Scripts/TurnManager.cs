@@ -26,6 +26,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private float enemyThinkDelay = 0.35f;
     [SerializeField] private float enemyActionDelay = 0.4f;
 
+    [Header("Economy")]
+    [Tooltip("Coins earned per enemy defeated (the core verb). Tune this, not the cost curve.")]
+    [SerializeField] private int coinsPerKill = 10;
+
     private GridManager grid;
     private readonly List<Unit> players = new List<Unit>();
     private readonly List<Unit> enemies = new List<Unit>();
@@ -109,7 +113,7 @@ public class TurnManager : MonoBehaviour
         // Red tile: attack that enemy.
         if (tile.Current == Highlight.Attack)
         {
-            unitThere.TakeDamage(selected.Atk);
+            unitThere.TakeDamage(selected.Atk + UpgradeAtkBonus);
             Haptics.Pulse();
             selected.MarkActed();
             Deselect();
@@ -128,6 +132,9 @@ public class TurnManager : MonoBehaviour
         // Anything else: deselect.
         Deselect();
     }
+
+    // Each wallet upgrade level adds +1 damage to every player attack.
+    static int UpgradeAtkBonus => Wallet.Instance != null ? Wallet.Instance.Level : 0;
 
     bool IsReady(Unit u) =>
         u != null && u.Team == Team.Player && !u.HasActed;
@@ -261,6 +268,8 @@ public class TurnManager : MonoBehaviour
     void OnUnitDied(Unit u)
     {
         if (gameOver) return;
+        // Only the player can defeat enemies, so an enemy death is the core-verb payout.
+        if (u.Team == Team.Enemy && Wallet.Instance != null) Wallet.Instance.Earn(coinsPerKill);
         if (!AnyAlive(enemies)) EndBattle(true);
         else if (!AnyAlive(players)) EndBattle(false);
     }
