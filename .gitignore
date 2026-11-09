@@ -113,3 +113,9 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Il2CPP build backups / symbols - never commit
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+# Mono crash dumps, LibreOffice lock files
+mono_crash.*
+.~lock.*#

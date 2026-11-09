@@ -1,8 +1,10 @@
 using UnityEngine;
 using System;
+using TMPro;
 
 
 public enum Team { Player, Enemy }
+
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Unit : MonoBehaviour
@@ -15,12 +17,15 @@ public class Unit : MonoBehaviour
     [SerializeField] private int atk = 2;
     [SerializeField] private int move = 3;
 
+    [SerializeField] private TMP_Text hpLabel;
+
     [SerializeField] private Color playerColor = new Color(0.2f, 0.8f, 1f);
     [SerializeField] private Color enemyColor  = new Color(1f, 0.4f, 0.2f);
     [SerializeField] private Color spentColor  = new Color(0.5f, 0.5f, 0.5f);
 
 
     private SpriteRenderer _sr;
+    private TextMesh _hpText;
 
     public Team Team => team;
     public int MaxHp => maxHp;
@@ -36,6 +41,7 @@ public class Unit : MonoBehaviour
     void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
+        _hpText = GetComponent<TextMesh>();
         _sr.sortingLayerName = "UI Layer2";   // tiles are on UI Layer1, so units draw on top
         _sr.sortingOrder = 0;
     }
@@ -47,8 +53,11 @@ public class Unit : MonoBehaviour
         maxHp += hpBonus;
         atk += atkBonus;
         Hp = maxHp;
+    
         name = $"{t}_{start.x}_{start.y}";
         if (t == Team.Enemy) transform.rotation = Quaternion.Euler(0, 0, 180f); // enemies face down
+        if (hpLabel != null) hpLabel.transform.rotation = Quaternion.identity;
+        RefreshHpLabel();
         Place(start);
         ResetTurn();
     }
@@ -79,13 +88,22 @@ public class Unit : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+       
         if (!IsAlive) return;
         Hp = Mathf.Max(0, Hp - amount);
+         RefreshHpLabel();
         if (Hp > 0) return;
 
         GridManager.Instance.ClearOccupant(Coord, this);
         gameObject.SetActive(false);   // deactivate rather than Destroy, so it can be pooled later
         Died?.Invoke(this);
+        
     }
-
+                                                                                                                                                                    
+ void RefreshHpLabel()                                                                                                                                                                 
+ {                                                                                                                                                                                     
+     if (hpLabel == null) return;                                                                                                            
+     hpLabel.text = Hp.ToString();                                                                                                                         
+                                                                                      
+}
 }

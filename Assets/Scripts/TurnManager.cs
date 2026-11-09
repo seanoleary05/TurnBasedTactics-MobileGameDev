@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Runs one battle: spawns both squads, turns taps into select/move/attack, and swaps turns.
@@ -17,12 +19,19 @@ public class TurnManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Button endTurnButton;
     [SerializeField] private TMP_Text banner;
+    [SerializeField] private GameObject resultPanel;   // shown on victory/defeat
+    [SerializeField] private TMP_Text resultText;
+
+    [Header("Enemy pacing (seconds, scaled so pause freezes it)")]
+    [SerializeField] private float enemyThinkDelay = 0.35f;
+    [SerializeField] private float enemyActionDelay = 0.4f;
 
     private GridManager grid;
     private readonly List<Unit> players = new List<Unit>();
     private readonly List<Unit> enemies = new List<Unit>();
 
-    private bool playerTurn;   // false during the enemy turn (and later, after win/lose)
+    private bool playerTurn;   // false during the enemy turn and after win/lose
+    private bool gameOver;
     private Unit selected;     // the player unit you tapped, or null
     private int turn;
 
@@ -30,8 +39,19 @@ public class TurnManager : MonoBehaviour
     private readonly List<Vector2Int> reach = new List<Vector2Int>();
     private readonly List<Unit> targets = new List<Unit>();
 
-    void OnEnable()  => TapSwipeInput.Tapped += OnTapped;
-    void OnDisable() => TapSwipeInput.Tapped -= OnTapped;
+    private float battleStartTime;
+
+    void OnEnable()
+    {
+        TapSwipeInput.Tapped += OnTapped;
+        Unit.Died += OnUnitDied;
+    }
+
+    void OnDisable()
+    {
+        TapSwipeInput.Tapped -= OnTapped;
+        Unit.Died -= OnUnitDied;
+    }
 
     void Start()   // Start, not Awake: GridManager builds the board in its Awake
     {
@@ -39,6 +59,9 @@ public class TurnManager : MonoBehaviour
 
         foreach (var c in playerSpawns) players.Add(Spawn(Team.Player, c));
         foreach (var c in enemySpawns)  enemies.Add(Spawn(Team.Enemy, c));
+
+        if (resultPanel != null) resultPanel.SetActive(false);
+        battleStartTime = Time.time;
 
         Telemetry.Log("level_start", ("level", "battle_01"),
             ("players", players.Count), ("enemies", enemies.Count));
@@ -59,6 +82,7 @@ public class TurnManager : MonoBehaviour
     {
         turn++;
         foreach (var u in players) if (u.IsAlive) u.ResetTurn();
+        foreach (var u in enemies) if (u.IsAlive) u.ResetTurn();   // un-grey enemies
         playerTurn = true;
         endTurnButton.interactable = true;
         banner.text = $"Turn {turn}: your move";
@@ -153,15 +177,130 @@ public class TurnManager : MonoBehaviour
         playerTurn = false;
         endTurnButton.interactable = false;
         banner.text = "Enemy turn";
-        EnemyTurn();
+        StartCoroutine(EnemyTurn());
     }
 
-    // ---------- Enemy turn (placeholder; step 6 replaces this) ----------
+    // ---------- Enemy turn ----------
+    // Each enemy: if no one is adjacent, walk to the reachable tile closest to a player,
+    // then hit the adjacent player with the lowest HP (finish off the weak first).
 
-    void EnemyTurn()
+    IEnumerator EnemyTurn()
     {
-        Debug.Log("[Turn] enemy turn (stub)");
-        StartPlayerTurn();
+        foreach (var e in enemies)
+        {
+            if (gameOver) yield break;
+            if (!e.IsAlive) continue;
+
+            grid.ClearHighlights();
+            grid.GetTile(e.Coord).SetHighlight(Highlight.Selected);
+            yield return new WaitForSeconds(enemyThinkDelay);
+
+            grid.GetAttackTargets(e, targets);
+            if (targets.Count == 0)
+            {
+                Vector2Int dest = BestApproachTile(e);
+                if (dest != e.Coord)
+                {
+                    e.Place(dest);
+                    grid.ClearHighlights();
+                    grid.GetTile(dest).SetHighlight(Highlight.Selected);
+                    yield return new WaitForSeconds(enemyActionDelay);
+                }
+                grid.GetAttackTargets(e, targets);
+            }
+
+            Unit victim = Weakest(targets);
+            if (victim != null)
+            {
+                grid.GetTile(victim.Coord).SetHighlight(Highlight.Attack);
+                yield return new WaitForSeconds(enemyActionDelay);
+                victim.TakeDamage(e.Atk);
+                Haptics.Pulse();
+            }
+
+            e.MarkActed();
+        }
+
+        grid.ClearHighlights();
+        if (!gameOver) StartPlayerTurn();
+    }
+
+    // The reachable tile (or the current one) with the smallest distance to any living player.
+    Vector2Int BestApproachTile(Unit e)
+    {
+        Vector2Int best = e.Coord;
+        int bestDist = DistanceToNearestPlayer(best);
+
+        grid.GetReachable(e, reach);
+        foreach (var c in reach)
+        {
+            int d = DistanceToNearestPlayer(c);
+            if (d < bestDist) { bestDist = d; best = c; }
+        }
+        return best;
+    }
+
+    int DistanceToNearestPlayer(Vector2Int c)
+    {
+        int best = int.MaxValue;
+        foreach (var p in players)
+            if (p.IsAlive) best = Mathf.Min(best, GridManager.Distance(c, p.Coord));
+        return best;
+    }
+
+    static Unit Weakest(List<Unit> list)
+    {
+        Unit best = null;
+        foreach (var u in list)
+            if (best == null || u.Hp < best.Hp) best = u;
+        return best;
+    }
+
+    // ---------- Win / lose ----------
+
+    void OnUnitDied(Unit u)
+    {
+        if (gameOver) return;
+        if (!AnyAlive(enemies)) EndBattle(true);
+        else if (!AnyAlive(players)) EndBattle(false);
+    }
+
+    static bool AnyAlive(List<Unit> list)
+    {
+        foreach (var u in list) if (u.IsAlive) return true;
+        return false;
+    }
+
+    void EndBattle(bool won)
+    {
+        gameOver = true;
+        playerTurn = false;
+        selected = null;
+        StopAllCoroutines();
+        grid.ClearHighlights();
+        endTurnButton.interactable = false;
+
+        int survivors = 0;
+        foreach (var u in players) if (u.IsAlive) survivors++;
+        float seconds = Time.time - battleStartTime;
+
+        banner.text = won ? "Victory!" : "Defeat";
+        if (resultText != null)
+            resultText.text = won
+                ? $"Victory!\nCleared in {turn} turns\n{survivors}/{players.Count} units survived"
+                : $"Defeat\nYour squad fell on turn {turn}";
+        if (resultPanel != null) resultPanel.SetActive(true);
+
+        Telemetry.Log(won ? "level_complete" : "level_fail",
+            ("level", "battle_01"), ("turns", turn),
+            ("survivors", survivors), ("seconds", seconds.ToString("F1")));
+    }
+
+    // Wired to the result panel's Retry button.
+    public void Restart()
+    {
+        Telemetry.Log("level_retry", ("level", "battle_01"));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // ---------- Helpers ----------
