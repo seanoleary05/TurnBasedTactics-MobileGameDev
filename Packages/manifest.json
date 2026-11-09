@@ -14,6 +14,7 @@
     "com.unity.learn.iet-framework": "6.0.7",
     "com.unity.memoryprofiler": "1.1.12",
     "com.unity.mobile.android-logcat": "1.4.7",
+    "com.unity.performance.profile-analyzer": "1.4.2",
     "com.unity.render-pipelines.universal": "17.6.0",
     "com.unity.test-framework": "1.8.0",
     "com.unity.timeline": "6.6.0",

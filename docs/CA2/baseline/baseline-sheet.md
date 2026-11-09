@@ -13,3 +13,5 @@
 | APK size (MB) | 58 |
 | Thermal delta, throttling (Week 7) | |
 | Load time (Week 5) | |
+| Start Temperature | temperature: 230 |
+
