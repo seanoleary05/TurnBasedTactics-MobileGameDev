@@ -91,7 +91,7 @@ public class Unit : MonoBehaviour
        
         if (!IsAlive) return;
         Hp = Mathf.Max(0, Hp - amount);
-         RefreshHpLabel();
+        RefreshHpLabel();
         if (Hp > 0) return;
 
         GridManager.Instance.ClearOccupant(Coord, this);

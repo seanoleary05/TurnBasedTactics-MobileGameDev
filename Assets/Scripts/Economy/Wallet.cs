@@ -32,4 +32,7 @@ public class Wallet : MonoBehaviour
         if (Coins < NextCost) return false;
         Coins -= NextCost; Level++; Changed?.Invoke(); return true;
     }
+
+    
+    
 }
