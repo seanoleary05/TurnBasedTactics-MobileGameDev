@@ -31,7 +31,11 @@
 
 ### W9 (9 to 13 Nov)
 - Health numbers drawn over units (`7f9d6cb`). Profiler and thermal captures taken (`245c45f`). Wallet, shop stub and HUD integrated (`185af5a`).
-- [TODO: device-tier presets, showcase on Wed 11 Nov, final docs]
+- 11 Nov, showcase prep:
+  - Fixed a compile break. An uncommitted edit had deleted `Wallet.Instance`, and `WalletHud`, `TurnManager`, `WalletPersistence` and `CoinShop` all depend on it. I restored the singleton (`eaf9e9a`).
+  - Pacing: `coinsPerKill` raised from 10 to 40 (`3c99052`). At 10, a win paid 30 coins, so the first upgrade (100) took about 4 battles, which missed the 2:00 target in `dev-journal.md`. At 40, one win pays 120, so the upgrade can be bought after the first battle.
+  - Removed a stray default "New Text" label from the `WalletHud` object, and resized the coin and upgrade labels.
+- [TODO: device-tier presets, showcase outcome, final docs]
 
 ---
 
