@@ -45,18 +45,22 @@ Entries are rebuilt from the commit history (`git log`). Commit hashes are given
 
 This was the design. The code was committed in Week 9 (`185af5a`).
 
-### Pacing pass (3 min, phone, stopwatch, fresh PlayerPrefs)
+### Pacing pass (calculated from the code values)
 
-| | Earn per kill | First upgrade at | Coins at 3:00 | Upgrades bought |
-|---|---|---|---|---|
-| Before | 10 | TODO | TODO | TODO |
-| After  | 40 | TODO | TODO | TODO |
+These figures are calculated from the values in the code: 3 enemies per battle, `coinsPerKill` set in the scene, and the cost curve above. They count battles won, not minutes, because I haven't done a timed stopwatch run on the phone yet. Coins carry over between battles because `Wallet` persists across Retry and is saved in PlayerPrefs.
 
-**Tuning change (11 Nov):** `coinsPerKill` 10 -> 40. At 10, a full win (3 kills) paid 30 coins, so the first upgrade (100) took about 4 wins and missed the 2:00 target. At 40 one win pays 120, so the first upgrade comes after the first battle. The cost curve is unchanged.
+Cumulative cost of upgrades: 100, 250, 475, 812, 1,318 coins.
 
-Target: first upgrade inside 2:00, about the 5th by 10:00.
+| | Earn per kill | Coins per win | 1st upgrade after | 2nd | 3rd | 5th |
+|---|---|---|---|---|---|---|
+| Before | 10 | 30 | 4th win | 9th win | 16th win | 44th win |
+| After  | 40 | 120 | 1st win | 3rd win | 4th win | 11th win |
 
-**Why the upgrade is felt:** TODO (e.g. at +1 ATK a 5 HP enemy drops in 2 hits instead of 3, so each battle takes visibly fewer turns).
+**Tuning change (11 Nov):** `coinsPerKill` 10 -> 40 (`3c99052`). At 10, the first upgrade needed four wins, which missed the target of a first upgrade within about 2 minutes. At 40, it comes straight after the first battle, so the reward → spend → upgrade loop can be seen in a single demo. The cost curve is unchanged, so later upgrades still slow down (the 5th needs 11 wins).
+
+Target: first upgrade inside 2:00, about the 5th by 10:00. The first part is met as long as one battle takes under 2 minutes. The second would need a battle of under a minute, so the late curve is probably still too slow. That needs a timed run to confirm.
+
+**Why the upgrade is felt:** player units start at ATK 2 and enemies have 5 HP (`Unit.prefab`). An enemy takes 3 hits at base, and 2 hits after the first upgrade (ATK 3). The second upgrade (ATK 4) still needs 2 hits, and the third (ATK 5) makes every hit a kill. So upgrades 1 and 3 are the ones that visibly shorten battles, and upgrade 2 adds nothing the player can see. That is worth fixing in CA3 by tuning enemy HP or the bonus per level.
 
 ## Weeks 6 to 7 and reading week (12 Oct to 1 Nov): Gap
 
@@ -80,5 +84,17 @@ Target: first upgrade inside 2:00, about the 5th by 10:00.
   - Implemented the economy from Week 6 (`185af5a`): `Wallet`, `WalletHud`, `WalletPersistence`/`WalletSave`, and `CoinShop` with the `IPurchaseProvider` stub. Kills now pay coins in `TurnManager`, and each upgrade adds +1 ATK.
 - **Tue 10 Nov:** Drafted the CA2 reflective journal (`286c65f`).
 - **Wed 11 Nov (showcase day):**
+  - Fixed a compile break before the showcase. An uncommitted edit had removed `Wallet.Instance`, which `WalletHud`, `TurnManager`, `WalletPersistence` and `CoinShop` all use. Restored the singleton (`eaf9e9a`).
   - Raised `coinsPerKill` from 10 to 40 so the first upgrade fits in a demo. Removed a stray "New Text" label from `WalletHud` and resized the HUD labels (`3c99052`).
-  - TODO: release build v0.3.1 (versionCode 4), install on the A15, run the showcase, and record how it went.
+  - Built `releases/turnbasedtactics-0.3.0.apk` (33 MB) for the showcase. I forgot to bump the version code: it is still 2, the same as v0.2.0.
+  - Revised the reflective journal (`653c276`).
+
+## Week 10 (Sat 14 Nov): Settings and bottleneck fix
+
+- **Haptics toggle** (`961cbf3`): added a button (`DisableHaptics`) that switches vibration on and off. The setting is saved in PlayerPrefs (`haptics` key) by `Haptics.Enabled`, so it survives a relaunch. This covers the "vibration optional" requirement in the brief.
+- **Font stutter fix** (`f1b07d9`): looked at the 938.3 ms worst frame from the 9 Nov capture again. The markers were `FontEngine.LoadFontFace_From_File`, `File.Read` and `FontEngine.Get_GPOS_Lookups`, so TextMesh Pro was opening the font file during play. I first assumed the font atlas was dynamic, but `LiberationSans SDF` is already static and covers all ASCII, and all game text is ASCII. The real causes were two settings:
+  - `GetFontFeaturesAtRuntime` was on in `TMP Settings`, so TextMesh Pro read kerning data from the font file at runtime. I turned it off. Kerning still works because the static asset already stores its kerning pairs.
+  - The static font had a dynamic fallback font (`LiberationSans SDF - Fallback`), which loads the raw font file when it is used. I removed it from the fallback list. Any missing character now shows as □ instead of loading a font.
+- **Telemetry buffering** (same commit): `Telemetry.Log` used to call `File.AppendAllText` on every event, which is blocking disk I/O on the main thread. Lines are now buffered in memory. They are written on `OnApplicationPause(true)`, on quit, or after 64 lines, by a hidden flusher object that persists across scene loads. Logcat output is unchanged.
+- Checked that the scripts compile (`dotnet build`, no errors), wrote up the analysis and approach in section 2.2 of the reflective journal, and pushed to GitHub.
+- The fix hasn't been measured on the device yet, so section 2.2 of the reflective journal has no "after" numbers.

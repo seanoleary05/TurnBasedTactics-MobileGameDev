@@ -3,123 +3,115 @@
 **Project:** Turn Based Tactics (Option 3, micro turn-based tactics)
 **Device:** Samsung Galaxy A15 (SM-A155F), Android 14, Vulkan, 1080×2340, 90 Hz
 **Engine:** Unity 6.6, IL2CPP, ARM64
-**Release tag:** `v0.2-CA2` <!-- TODO: confirm tag name -->
-
-> DRAFT. Items marked `[TODO]` need real numbers from the device before submission. Do not submit with placeholders.
+**Release tag:** `v0.2-CA2`
 
 ---
 
 ## Part 1: Weekly log (W5 to W9)
 
 ### W5 (5 to 9 Oct)
-- Started refactoring the board into a `Tile` component with its own coordinate and highlight state (commit `dbc4bba`), replacing the single loose grid script from W3.
-- Reason: the turn system needs to ask a tile "what are you showing?", and that was impossible when colours were set directly from `GridManager`.
+- Refactored the board into a `Tile` component with its own coordinate and highlight state (`dbc4bba`), so the turn system can ask a tile what it shows instead of `GridManager` setting colours directly.
 
 ### W6 (12 to 16 Oct)
-- Designed the economy loop in `dev-journal.md`: earn coins per kill, spend on a wallet level, each level adds +1 attack.
-
+- Designed the economy loop in `dev-journal.md`: earn coins per kill, spend them on a wallet level, and each level adds +1 attack.
 
 ### W7 (19 to 23 Oct)
-- Planned: Adaptive Performance and a thermal soak. 
+- Planned Adaptive Performance and a thermal soak but did neither. The soak capture slipped to 9 Nov, and Adaptive Performance was not integrated.
 
 ### Reading week (26 Oct to 1 Nov)
-- Alternating light/dark tile colours (`2e02dd5`) so grid distance can be read at a glance on a small screen.
+- Alternating light/dark tiles (`2e02dd5`), so grid distance reads at a glance on a small screen.
 
 ### W8 (2 to 6 Nov)
-- Added a local telemetry stub (`77a8d6e`) that writes to logcat and to `telemetry.log` in `persistentDataPath`.
-- Added the `Highlight` enum (`a3cf542`), unit rendering (`c13162c`) and the full `TurnManager` (`4edcef4`): select, move, attack, End Turn, plus enemy AI that approaches the nearest player and hits the weakest one.
+- Local telemetry stub writing to logcat and `telemetry.log` (`77a8d6e`).
+- `Highlight` enum (`a3cf542`), unit rendering (`c13162c`) and the full `TurnManager` (`4edcef4`): select, move, attack, End Turn, and an enemy AI that approaches the nearest player and hits the weakest one.
 
 ### W9 (9 to 13 Nov)
-- Health numbers drawn over units (`7f9d6cb`). Profiler and thermal captures taken (`245c45f`). Wallet, shop stub and HUD integrated (`185af5a`).
+- Health numbers over units (`7f9d6cb`), the thermal-soak profiler capture (`245c45f`), and the wallet, shop stub and HUD (`185af5a`).
 - 11 Nov, showcase prep:
-  - Fixed a compile break. An uncommitted edit had deleted `Wallet.Instance`, and `WalletHud`, `TurnManager`, `WalletPersistence` and `CoinShop` all depend on it. I restored the singleton (`eaf9e9a`).
-  - Pacing: `coinsPerKill` raised from 10 to 40 (`3c99052`). At 10, a win paid 30 coins, so the first upgrade (100) took about 4 battles, which missed the 2:00 target in `dev-journal.md`. At 40, one win pays 120, so the upgrade can be bought after the first battle.
-  - Removed a stray default "New Text" label from the `WalletHud` object, and resized the coin and upgrade labels.
-- [TODO: device-tier presets, showcase outcome, final docs]
+  - Restored the deleted `Wallet.Instance` singleton, which four scripts depend on (`eaf9e9a`).
+  - Raised `coinsPerKill` from 10 to 40 (`3c99052`). At 10, the first upgrade (100 coins) took four wins. At 40, it comes after the first win.
+  - Built the 33 MB `0.3.0` APK for the showcase, but forgot to bump the version code (still 2).
+- 14 Nov: saved haptics toggle (`961cbf3`), and the font and telemetry fix (`f1b07d9`, see 2.2).
+- Device-tier presets (the W9 milestone) were not implemented.
 
 ---
 
 ## Part 2: Structured reflection
 
-The reflection uses Gibbs' (1988) cycle, shortened to **Description → Evaluation → Analysis → Action**.
+The reflection follows Gibbs' (1988) cycle, shortened to **Description → Evaluation → Analysis → Action**.
 
 ### 2.1 What changed in scope or design, and why?
 
-**Description.** The CA1 pitch was a linear dungeon of several encounters with a party of 3 to 4 units, loot rewards, and per-character stats such as speed. The CA2 slice is one 6×8 battle, three player units against three enemies, with coins as the only reward and one global upgrade (+1 ATK per level).
+**Description.** The CA1 pitch was a linear dungeon of several encounters with a party of 3 to 4 units, loot, and per-character stats. The CA2 slice is one 6×8 battle (three units against three enemies) with coins as the only reward and one global upgrade (+1 ATK per level).
 
-**Evaluation.** The cut was the right call for a vertical slice. The brief asks for "production-ready feel for one level/encounter", and a single battle that plays well matches that better than a thin dungeon would. The cost is that the economy has only one sink, so the "reward → spend → upgrade" loop pays off only across replays, not within a single run.
+**Evaluation.** The cut suits a vertical slice, since the brief asks for a "production-ready feel for one level/encounter". The cost is that the economy has one sink, so reward → spend → upgrade only pays off across replays.
 
-**Analysis.** Two pieces of evidence drove the cut. First, the commit history shows a gap of about three weeks with no commits (8 Oct to 1 Nov). Most of the core loop (`Highlight`, `Unit`, `TurnManager`) was committed between 2 and 5 Nov. With that little time left, adding more encounters would have meant shipping a weaker loop. Second, the board size was set by the screen, not by design. `GridManager.CenterCamera` fits the board to portrait width with `orthographicSize = max(h/2 + 1, (w/2 + 0.5)/aspect)`. On a 1080×2340 screen a 6-wide board gives tiles of about [TODO] dp, well above the 44 dp minimum touch target (Apple, 2024). A wider board would push tiles towards that limit, so 6×8 was a constraint, not a free choice. Fixing upgrades at +1 ATK against 5 HP enemies means one upgrade turns a 3-hit kill into a 2-hit kill (base ATK 2 → 3), a change the player can actually see.
+**Analysis.** Two pieces of evidence drove the cut. First, the commit history shows no commits from 8 Oct to 1 Nov, and most of the core loop landed on 2 to 5 Nov. With that little time left, more encounters would have meant a weaker loop. Second, the screen set the board size. `GridManager.CenterCamera` sets `orthographicSize = max(h/2 + 1, (w/2 + 0.5)/aspect)`. On the A15 (1080×2340, 450 dpi), a 6-wide board gives 7.58, so each tile is about 154 px, or 55 dp, above the 44 dp minimum touch target (Apple, 2024). The same formula gives 48 dp at 7 wide and 43 dp at 8 wide, which is below the minimum, so 6×8 was a constraint, not a free choice.
 
-**Action.** For CA3, add a second encounter only if pacing data shows players buy their first upgrade before the run ends. Otherwise the economy has nowhere to go.
+The upgrade size came from the same kind of check. With base ATK 2 against 5 HP enemies, the first upgrade turns a 3-hit kill into a 2-hit kill, which the player can see. The second (ATK 4) changes nothing visible, so the curve still needs tuning.
+
+**Action.** For CA3, tune enemy HP so every upgrade changes hits-to-kill. Add a second encounter only if pacing data shows players reach their first upgrade within a run.
 
 ### 2.2 Key problem → approach → outcome
 
-**Problem (Description).** The thermal-soak capture (`docs/CA2/baseline/thermal-soak/before.data`) shows a **median frame time of 22.18 ms** (about 45 fps, against a 60 fps target) and a **worst frame of 938.3 ms** (frame 762). The top self-time markers on that frame are `IMGUIModule GUIStyle…`, `EngineJob` (450.5 ms), `FontEngine.LoadFontFace_From_File` (61.9 ms), `File.Read` (58.8 ms) and `FontEngine.Get_GPOS_Lookups` (53.1 ms). In CA1, the worst main-thread frame was 20 ms, with Rendering as the tallest marker.
+**Problem (Description).** The thermal-soak capture (`docs/CA2/baseline/thermal-soak/before.data`) shows a **median frame time of 22.18 ms** (about 45 fps against a 60 fps target) and a **worst frame of 938.3 ms** (frame 762). Its top self-time markers are `IMGUIModule GUIStyle…`, `EngineJob` (450.5 ms), `FontEngine.LoadFontFace_From_File` (61.9 ms), `File.Read` (58.8 ms) and `FontEngine.Get_GPOS_Lookups` (53.1 ms). In CA1 the worst frame was 20 ms, with Rendering as the tallest marker.
 
-**Evaluation.** A single frame close to one second is a visible hitch, which is the "stable frame times" problem the guardrails warn about. It matters more than the median, because players notice one long stutter more than an average that is slightly slow (Unity Technologies, 2024a).
+**Evaluation.** A near-one-second frame is a visible hitch, which is the "stable frame times" problem the guardrails warn about. It matters more than the median, because players notice one long stutter more than a slightly slow average (Unity Technologies, 2024a).
 
-**Analysis.** The markers point to **a font file being opened and its kerning tables read at runtime, on the main thread, during play**. It is not rendering cost. `LoadFontFace_From_File` and `File.Read` mean TextMesh Pro is reading a font file from disk, and `Get_GPOS_Lookups` means it is reading the font's GPOS (kerning) table.
+**Analysis.** The markers show **a font file being opened and its kerning (GPOS) tables read on the main thread during play**, not rendering cost. My first guess was a *dynamic* font atlas filling in new characters. The project disproved this. `LiberationSans SDF` is already a **static** atlas covering all printable ASCII, and every string in the game is ASCII, so no glyph was ever missing. The file reads came from two settings:
+1. `GetFontFeaturesAtRuntime` was on in `TMP Settings`, so TextMesh Pro read kerning from the source font at runtime, although the static asset already stores those pairs.
+2. The static font had a **dynamic fallback** that loads the raw `.ttf` from disk when used.
 
-My first guess was that the game's font atlas was *dynamic* and was filling itself in as new characters appeared. Checking the project disproved this:
-- `LiberationSans SDF` is already a **static** atlas with 250 characters, covering all printable ASCII.
-- Every string the game shows is plain ASCII: the 12 scene labels plus the text set from `TurnManager`, `Unit` and `WalletHud`.
+Either one explains a one-off stall the first time text is laid out. No script uses `OnGUI`, so the IMGUI marker is probably the development-build overlay, which needs checking in a release build. A smaller cause: `Telemetry.Log` called `File.AppendAllText` for every event, which is blocking I/O on the same frames as `level_start` and `level_complete`.
 
-So no glyph was ever missing. The file reads came from two project settings:
-1. `GetFontFeaturesAtRuntime` was enabled in `TMP Settings`. This makes TextMesh Pro load the source font and read its kerning data at runtime, even though the static asset already stores its kerning pairs.
-2. The static font listed a **dynamic fallback** (`LiberationSans SDF - Fallback`) as a backup font, set to clear its data on build. Any lookup that reached it had to load the raw `.ttf` from disk and build its tables from scratch.
+**Approach.** I made one change per cause:
+1. **Runtime font features off** (`GetFontFeaturesAtRuntime` 1 → 0). Kerning still works from the stored pairs (Unity Technologies, 2024b).
+2. **Dynamic fallback removed** from `LiberationSans SDF`. A character outside the atlas now shows □ instead of loading a font. That is acceptable while all text is ASCII, and it turns a hidden stutter into a visible bug.
+3. **Buffered telemetry.** `Log()` still prints to logcat but buffers the file line. `Flush()` writes on `OnApplicationPause(true)`, on quit, or after 64 lines. I chose pause because Android usually kills a backgrounded app without calling `OnApplicationQuit`. The trade-off is that a hard crash loses unflushed lines, which is acceptable for a local debug log.
 
-Either one explains a one-off stall the first time text is laid out. No game script uses `OnGUI`, so the IMGUI marker probably comes from the development-build overlay, and it should be checked in a release build before it is blamed on the game.
-
-A second, smaller cause: `Telemetry.Log` called `File.AppendAllText` synchronously for every event. It only fires on events, not every frame, but it is blocking I/O on the main thread and lands on the same frames as `level_start` and `level_complete`.
-
-**Approach.** I made three changes, each aimed at a single cause:
-1. **Turned off runtime font features** (`TMP Settings.asset`: `GetFontFeaturesAtRuntime` 1 → 0). Kerning still works, because the static asset already contains the kerning pairs, so the font file never needs opening during play (Unity Technologies, 2024b).
-2. **Removed the dynamic fallback** from the static font's fallback list (`LiberationSans SDF.asset`). The static atlas is now the only font used at runtime. The trade-off is deliberate: a character outside the atlas now shows a □ instead of quietly loading a font file. That is acceptable while all game text is ASCII, and it makes any future missing character visible during testing instead of a hidden stutter.
-3. **Buffered telemetry** (`Telemetry.cs`). `Log()` still writes to logcat straight away. The file line now goes into an in-memory buffer instead of to disk on that frame. `Flush()` writes to `telemetry.log` on `OnApplicationPause(true)`, on quit, or after 64 lines. A hidden object that persists across scene loads handles this, so it keeps working after Retry. I chose pause over level end because Android usually kills a backgrounded app without calling `OnApplicationQuit`, so pause is the last reliable chance to write. The trade-off is that a hard crash loses the unflushed lines, which is acceptable for a local, debug-only log.
-
-I rejected **warming up the text during a loading screen**. It would only move the stall to a loading screen that the slice doesn't have, instead of removing it.
+I rejected warming up text on a loading screen, because that only moves the stall rather than removing it.
 
 **Outcome.**
 
-| Metric | Before | After |
-|---|---|---|
-| Median frame time (ms) | 22.18 | [TODO] |
-| p99 frame time (ms, `FrameTimeSampler`) | [TODO] | [TODO] |
-| Worst frame (ms) | 938.3 | [TODO] |
-| Worst-frame top marker | `FontEngine` / `File.Read` | [TODO] |
-| GC alloc per frame in steady play (B) | [TODO] | [TODO] |
+| Metric | Before the fix (9 Nov capture) |
+|---|---|
+| Median frame time (ms) | 22.18 |
+| Worst frame (ms) | 938.3 (frame 762) |
+| Worst-frame top markers | `EngineJob`, `FontEngine.LoadFontFace_From_File`, `File.Read`, `FontEngine.Get_GPOS_Lookups` |
+| APK size | 33 MB (v0.3.0) |
 
-The fix succeeds if the worst frame no longer shows any `FontEngine.*` or `File.Read` markers. If a large spike remains, the next suspect is the IMGUI marker, checked in a release build. The median is a separate problem (see 2.3) and was not expected to change much.
+**The fix has not yet been measured.** I made it on 14 Nov, after the last device capture. My only evidence is that each removed setting accounts for one font marker, which is reasoning, not a measured result. Repeating the soak capture on the same device would confirm it. It succeeds if the worst frame contains no `FontEngine.*` or `File.Read` markers. If a spike remains, the IMGUI marker is next. The median is a separate problem (see 2.3).
 
-**Side-effect checks:**
-- [TODO] Text checked at all three `TextScale` sizes, and on the Victory and Defeat panels: no □ boxes.
-- [TODO] APK size before/after. I expect almost no change, because the fallback asset and its font file sit in a `Resources` folder and Unity always includes those in the build. Moving the fallback out of `Resources` would remove it from the build.
-- [TODO] `telemetry.log` pulled with adb after pressing Home: every event from the session is present.
+**Side-effect risks** and their checks:
+- *Missing glyphs:* expected none, since all text is ASCII. Check all three `TextScale` sizes and both result panels.
+- *APK size:* expected near 33 MB, because the fallback still ships from its `Resources` folder. Moving it out would remove it.
+- *Lost telemetry:* pull `telemetry.log` after pressing Home and confirm every event is present.
+
+The scripts compile (`dotnet build`, no errors).
 
 ### 2.3 What next for CA3 (based on evidence)
 
-**Action.** Each item is tied to a measurement, not a preference:
+**Action.** Each item is tied to a measurement:
 
-1. **Fix the median, not just the spike.** 22.18 ms is above the 16.7 ms budget for 60 fps. Next, run `RenderScaleProbe` at 0.5×. If frame time drops sharply, the game is GPU-bound and the fix is render scale or overdraw. If it barely moves, look at CPU work, starting with `GridManager.ClearHighlights`. That function repaints all 48 tiles on every tap, and the cost can be confirmed with a profiler marker.
-2. **Thermal tiers.** [TODO: start temperature and Δ after 10 minutes.] If the A15 throttles, use Adaptive Performance to drop to 30 fps during the enemy turn, which is mostly coroutine waits (`enemyThinkDelay` 0.35 s, `enemyActionDelay` 0.4 s) and doesn't need 60 fps (Unity Technologies, 2024c).
-3. **Economy tuning from telemetry.** Add a `coins` parameter to `level_complete` and log `upgrade_purchased` with level and cost. Then pull `telemetry.log` from 5+ peer QA runs and check whether the 2:00 first-upgrade target is met before changing `coinsPerKill`.
-4. **Pooling** only if the profiler shows a cost. Today, units are created once per battle and the scene reloads on Retry. If CA3 adds more encounters, a pool of `Unit` objects replaces per-encounter `Instantiate`. [TODO: record the Retry scene-reload time first.]
+1. **Fix the median, not just the spike.** 22.18 ms is above the 16.7 ms budget. Run `RenderScaleProbe` at 0.5×. If frame time drops sharply, the game is GPU-bound and the fix is render scale or overdraw. If it barely moves, profile CPU work, starting with `GridManager.ClearHighlights`, which repaints all 48 tiles on every tap.
+2. **Thermal tiers.** Battery temperature started at 23.0 °C (`dumpsys battery`: 230), but I did not record the 10-minute change, so throttling is unproven. If a timed soak shows throttling, use Adaptive Performance to drop to 30 fps during the enemy turn, which is mostly coroutine waits (0.35 s and 0.4 s) (Unity Technologies, 2024c).
+3. **Economy tuning from telemetry.** Add `coins` to `level_complete` and log `upgrade_purchased`. Then pull `telemetry.log` from 5+ peer QA runs and check the 2:00 first-upgrade target before changing `coinsPerKill`.
+4. **Pooling only if the profiler shows a cost.** Units are created once per battle and Retry reloads the scene. Measure the reload time first, and pool `Unit` objects only if more encounters make `Instantiate` show up.
 
 ---
 
 ## AI assistance
-This draft was structured with help from Claude (Anthropic, 2026). The draft was generated from my repository history, scripts and profiler screenshots. I checked every number against my own captures and replaced the placeholders with my own measurements.
+This journal was structured and edited with help from Claude (Anthropic, 2026), working from my repository history, scripts and profiler captures. I checked each figure against my own captures. Where a measurement was not taken, the text says so rather than estimating it.
 
 ## References
-Anthropic (2026) *Claude* [Large language model]. Available at: https://claude.ai (Accessed: 10 November 2026).
+Anthropic (2026) *Claude* [Large language model]. Available at: https://claude.ai (Accessed: 14 November 2026).
 
-Apple (2024) *Human Interface Guidelines: Accessibility*. Available at: https://developer.apple.com/design/human-interface-guidelines/accessibility (Accessed: [TODO]).
+Apple (2024) *Human Interface Guidelines: Accessibility*. Available at: https://developer.apple.com/design/human-interface-guidelines/accessibility (Accessed: 14 November 2026).
 
 Gibbs, G. (1988) *Learning by Doing: A Guide to Teaching and Learning Methods*. Oxford: Further Education Unit, Oxford Polytechnic.
 
-Unity Technologies (2024a) *Unity Manual: Profiler overview*. Available at: https://docs.unity3d.com/Manual/Profiler.html (Accessed: [TODO]).
+Unity Technologies (2024a) *Unity Manual: Profiler overview*. Available at: https://docs.unity3d.com/Manual/Profiler.html (Accessed: 14 November 2026).
 
-Unity Technologies (2024b) *TextMesh Pro: Font Assets and Settings*. Available at: https://docs.unity3d.com/Packages/com.unity.textmeshpro@latest (Accessed: [TODO]).
+Unity Technologies (2024b) *TextMesh Pro: Font Assets and Settings*. Available at: https://docs.unity3d.com/Packages/com.unity.textmeshpro@latest (Accessed: 14 November 2026).
 
-Unity Technologies (2024c) *Adaptive Performance package documentation*. Available at: https://docs.unity3d.com/Packages/com.unity.adaptiveperformance@latest (Accessed: [TODO]).
+Unity Technologies (2024c) *Adaptive Performance package documentation*. Available at: https://docs.unity3d.com/Packages/com.unity.adaptiveperformance@latest (Accessed: 14 November 2026).
