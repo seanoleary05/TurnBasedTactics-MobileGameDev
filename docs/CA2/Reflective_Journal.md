@@ -59,21 +59,43 @@ The reflection uses Gibbs' (1988) cycle, shortened to **Description → Evaluati
 
 **Evaluation.** A single frame close to one second is a visible hitch, which is the "stable frame times" problem the guardrails warn about. It matters more than the median, because players notice one long stutter more than an average that is slightly slow (Unity Technologies, 2024a).
 
-**Analysis.** The markers point to a **font asset being loaded and its glyph tables built at runtime, on the main thread, during play**. It is not rendering cost. `LoadFontFace_From_File` and `File.Read` mean TextMesh Pro is reading a font file from disk. `Get_GPOS_Lookups` means it is building kerning data. That happens when a *dynamic* TMP font atlas meets a glyph or font for the first time. This frame lines up with the first time new text appears (health numbers over units, or the result panel). No game script uses `OnGUI`, so the IMGUI marker probably comes from the development-build overlay. It should be checked in a release build before it is blamed on the game. A second, smaller cause: `Telemetry.Log` builds a string with a `StringBuilder`, boxes its tuple parameters and calls `File.AppendAllText` synchronously. It only fires on events, not every frame, but it is blocking I/O on the main thread and lands on the same frames as `level_start` and `level_complete`.
+**Analysis.** The markers point to **a font file being opened and its kerning tables read at runtime, on the main thread, during play**. It is not rendering cost. `LoadFontFace_From_File` and `File.Read` mean TextMesh Pro is reading a font file from disk, and `Get_GPOS_Lookups` means it is reading the font's GPOS (kerning) table.
 
-**Approach and outcome.** [TODO: describe the fix you actually implemented. The likely options are:]
-1. Pre-populate the TMP font atlas with the glyphs the game needs (digits, "Victory!", "Defeat", "Turn") and set it to *Static*, so nothing is loaded at runtime (Unity Technologies, 2024b).
-2. Warm up the text during the loading screen by enabling the result panel and health labels once before gameplay.
-3. Buffer telemetry lines and flush them on `OnApplicationPause` and at the end of a level, rather than once per event.
+My first guess was that the game's font atlas was *dynamic* and was filling itself in as new characters appeared. Checking the project disproved this:
+- `LiberationSans SDF` is already a **static** atlas with 250 characters, covering all printable ASCII.
+- Every string the game shows is plain ASCII: the 12 scene labels plus the text set from `TurnManager`, `Unit` and `WalletHud`.
+
+So no glyph was ever missing. The file reads came from two project settings:
+1. `GetFontFeaturesAtRuntime` was enabled in `TMP Settings`. This makes TextMesh Pro load the source font and read its kerning data at runtime, even though the static asset already stores its kerning pairs.
+2. The static font listed a **dynamic fallback** (`LiberationSans SDF - Fallback`) as a backup font, set to clear its data on build. Any lookup that reached it had to load the raw `.ttf` from disk and build its tables from scratch.
+
+Either one explains a one-off stall the first time text is laid out. No game script uses `OnGUI`, so the IMGUI marker probably comes from the development-build overlay, and it should be checked in a release build before it is blamed on the game.
+
+A second, smaller cause: `Telemetry.Log` called `File.AppendAllText` synchronously for every event. It only fires on events, not every frame, but it is blocking I/O on the main thread and lands on the same frames as `level_start` and `level_complete`.
+
+**Approach.** I made three changes, each aimed at a single cause:
+1. **Turned off runtime font features** (`TMP Settings.asset`: `GetFontFeaturesAtRuntime` 1 → 0). Kerning still works, because the static asset already contains the kerning pairs, so the font file never needs opening during play (Unity Technologies, 2024b).
+2. **Removed the dynamic fallback** from the static font's fallback list (`LiberationSans SDF.asset`). The static atlas is now the only font used at runtime. The trade-off is deliberate: a character outside the atlas now shows a □ instead of quietly loading a font file. That is acceptable while all game text is ASCII, and it makes any future missing character visible during testing instead of a hidden stutter.
+3. **Buffered telemetry** (`Telemetry.cs`). `Log()` still writes to logcat straight away. The file line now goes into an in-memory buffer instead of to disk on that frame. `Flush()` writes to `telemetry.log` on `OnApplicationPause(true)`, on quit, or after 64 lines. A hidden object that persists across scene loads handles this, so it keeps working after Retry. I chose pause over level end because Android usually kills a backgrounded app without calling `OnApplicationQuit`, so pause is the last reliable chance to write. The trade-off is that a hard crash loses the unflushed lines, which is acceptable for a local, debug-only log.
+
+I rejected **warming up the text during a loading screen**. It would only move the stall to a loading screen that the slice doesn't have, instead of removing it.
+
+**Outcome.**
 
 | Metric | Before | After |
 |---|---|---|
 | Median frame time (ms) | 22.18 | [TODO] |
 | p99 frame time (ms, `FrameTimeSampler`) | [TODO] | [TODO] |
 | Worst frame (ms) | 938.3 | [TODO] |
+| Worst-frame top marker | `FontEngine` / `File.Read` | [TODO] |
 | GC alloc per frame in steady play (B) | [TODO] | [TODO] |
 
-**Side-effect checks:** [TODO: APK size change from the static atlas; text still readable at all three `TextScale` sizes; no missing-glyph boxes.]
+The fix succeeds if the worst frame no longer shows any `FontEngine.*` or `File.Read` markers. If a large spike remains, the next suspect is the IMGUI marker, checked in a release build. The median is a separate problem (see 2.3) and was not expected to change much.
+
+**Side-effect checks:**
+- [TODO] Text checked at all three `TextScale` sizes, and on the Victory and Defeat panels: no □ boxes.
+- [TODO] APK size before/after. I expect almost no change, because the fallback asset and its font file sit in a `Resources` folder and Unity always includes those in the build. Moving the fallback out of `Resources` would remove it from the build.
+- [TODO] `telemetry.log` pulled with adb after pressing Home: every event from the session is present.
 
 ### 2.3 What next for CA3 (based on evidence)
 
@@ -98,6 +120,6 @@ Gibbs, G. (1988) *Learning by Doing: A Guide to Teaching and Learning Methods*. 
 
 Unity Technologies (2024a) *Unity Manual: Profiler overview*. Available at: https://docs.unity3d.com/Manual/Profiler.html (Accessed: [TODO]).
 
-Unity Technologies (2024b) *TextMesh Pro: Font Asset Creator*. Available at: https://docs.unity3d.com/Packages/com.unity.textmeshpro@latest (Accessed: [TODO]).
+Unity Technologies (2024b) *TextMesh Pro: Font Assets and Settings*. Available at: https://docs.unity3d.com/Packages/com.unity.textmeshpro@latest (Accessed: [TODO]).
 
 Unity Technologies (2024c) *Adaptive Performance package documentation*. Available at: https://docs.unity3d.com/Packages/com.unity.adaptiveperformance@latest (Accessed: [TODO]).
