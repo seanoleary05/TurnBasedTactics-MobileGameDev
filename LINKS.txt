@@ -1,0 +1,4 @@
+Repository: https://github.com/seanoleary05/TurnBasedTactics-MobileGameDev
+Release tag: v0.2-CA2
+Tag URL: https://github.com/seanoleary05/TurnBasedTactics-MobileGameDev/releases/tag/v0.2-CA2
+Video: <add YouTube link here if not included in Video/>

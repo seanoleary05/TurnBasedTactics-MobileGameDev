@@ -73,14 +73,14 @@ I rejected warming up text on a loading screen, because that only moves the stal
 
 **Outcome.**
 
-| Metric | Before the fix (9 Nov capture) |
-|---|---|
-| Median frame time (ms) | 22.18 |
-| Worst frame (ms) | 938.3 (frame 762) |
-| Worst-frame top markers | `EngineJob`, `FontEngine.LoadFontFace_From_File`, `File.Read`, `FontEngine.Get_GPOS_Lookups` |
-| APK size | 33 MB (v0.3.0) |
+| Metric | Before (9 Nov) | After (15 Nov) |
+|---|---|---|
+| Median frame time (ms) | 22.18 | 22.1 |
+| Worst frame (ms) | 938.3 (frame 762) | 64 |
+| Worst-frame top markers | `EngineJob`, `FontEngine.LoadFontFace_From_File`, `File.Read`, `FontEngine.Get_GPOS_Lookups` | |
+| APK size | 33 MB (v0.3.0) | |
 
-**The fix has not yet been measured.** I made it on 14 Nov, after the last device capture. My only evidence is that each removed setting accounts for one font marker, which is reasoning, not a measured result. Repeating the soak capture on the same device would confirm it. It succeeds if the worst frame contains no `FontEngine.*` or `File.Read` markers. If a spike remains, the IMGUI marker is next. The median is a separate problem (see 2.3).
+**Measured result.** I repeated the capture on the same device on 15 Nov and compared the two in Profile Analyzer. The worst frame fell from 938.3 ms to 64 ms (−93%), so the one-second hitch is gone. The median did not move (22.18 → 22.1 ms), which fits the fix: it removed a one-off load, not per-frame work. A 64 ms spike remains, so the IMGUI marker is next. The median is a separate problem (see 2.3).
 
 **Side-effect risks** and their checks:
 - *Missing glyphs:* expected none, since all text is ASCII. Check all three `TextScale` sizes and both result panels.
@@ -93,7 +93,7 @@ The scripts compile (`dotnet build`, no errors).
 
 **Action.** Each item is tied to a measurement:
 
-1. **Fix the median, not just the spike.** 22.18 ms is above the 16.7 ms budget. Run `RenderScaleProbe` at 0.5×. If frame time drops sharply, the game is GPU-bound and the fix is render scale or overdraw. If it barely moves, profile CPU work, starting with `GridManager.ClearHighlights`, which repaints all 48 tiles on every tap.
+1. **Fix the median, not just the spike.** 22.18 ms is above the 16.7 ms budget, but p99 (about 22.4 ms) is within 0.3 ms of the average (22.19 ms), and 22.2 ms is half the 90 Hz refresh rate. That suggests frame pacing at 45 fps rather than load. Test at 60 Hz first. If the average stays near 22 ms, run `RenderScaleProbe` at 0.5× to separate GPU from CPU cost.
 2. **Thermal tiers.** Battery temperature started at 23.0 °C (`dumpsys battery`: 230), but I did not record the 10-minute change, so throttling is unproven. If a timed soak shows throttling, use Adaptive Performance to drop to 30 fps during the enemy turn, which is mostly coroutine waits (0.35 s and 0.4 s) (Unity Technologies, 2024c).
 3. **Economy tuning from telemetry.** Add `coins` to `level_complete` and log `upgrade_purchased`. Then pull `telemetry.log` from 5+ peer QA runs and check the 2:00 first-upgrade target before changing `coinsPerKill`.
 4. **Pooling only if the profiler shows a cost.** Units are created once per battle and Retry reloads the scene. Measure the reload time first, and pool `Unit` objects only if more encounters make `Instantiate` show up.
